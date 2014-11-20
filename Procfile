@@ -1,1 +1,2 @@
-web: gunicorn princetonsi.wsgi
+web: python manage.py collectstatic --noinput; gunicorn princetonsi.wsgi
+
