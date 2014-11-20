@@ -81,17 +81,17 @@ PROJECT_DIR = os.path.dirname(__file__)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_DIR, "media")
-STATIC_ROOT = 'static'
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-DJANGO_ROOT = dirname(dirname(abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 STATICFILES_DIRS = (
-    normpath(join(DJANGO_ROOT, 'psibackend', 'static')),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 
