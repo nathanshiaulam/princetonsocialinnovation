@@ -1,0 +1,228 @@
+@CHARSET "UTF-8";
+#idNavigation{
+	/* for div containing navigation */
+	
+	position:fixed;
+	top:0;
+	right:0;
+	width:100%;
+	
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	
+	/* W3C */
+	display:flex;
+	
+	/* animation 
+	-webkit-transition: -webkit-transform 0.2s, opacity 0.5s;
+	transition: transform 0.2s, opacity 0.5s, -ms-transform 0.5s;
+	*/
+	
+	/* initial position */
+	-ms-transform: translate3d(0px, 0px, 0);
+    -moz-transform: translate3d(0px, 0px, 0);
+    -webkit-transform: translate3d(0px, 0px, 0);
+    transform: translate3d(0px, 0px, 0);
+	/* transform: translateY(-63px);
+	-webkit-transform: translateY(-63px); */
+	
+	-webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+
+	
+	height: 50px;
+	background-color: rgba(200, 200, 200, 0.9);
+	border-bottom: 1px solid rgba(240, 240, 240, 1);
+	
+	
+	-webkit-animation: pullDown 0.5s ease-out;
+	animation: pullDown 0.5s ease-out;
+	
+	/* -webkit-animation: pullDown 0.8s;
+	-webkit-animation-delay:0.5s;
+	animation: pullDown 1.3s; */
+	z-index:999;
+	
+	/* box-shadow: 0px 2px 5px white; */
+	
+	/* outline: white solid 2px; */
+	/* -webkit-filter: blur(10px); */
+	background: transparent url('/images/navBG.png') no-repeat;
+	background-size: 100% 110%;
+	background-position: center bottom;
+	
+	overflow: hidden;
+	-webkit-transform-style: preserve-3d;
+}
+
+@-webkit-keyframes pullDown {
+    0% {
+    -webkit-transform: translateY(-200%);
+    }
+    30% {
+    -webkit-transform: translateY(-200%);
+    }
+}
+@keyframes pullDown {
+    0% {
+    -ms-transform: translateY(-200%);
+    -moz-transform: translateY(-200%);
+    transform: translateY(-200%);
+    }
+    30% {
+    -ms-transform: translateY(-200%);
+    -moz-transform: translateY(-200%);
+    transform: translateY(-200%);
+    }
+}
+#idNavBG {
+	/* position:absolute;
+	width: 150%;
+	height: 150%;
+	top: -25%;
+	left: -25%;
+	background-color: white;
+	z-index: -1;
+	-webkit-transform: translateZ(0);
+	-webkit-filter: blur(22px); */
+}
+
+#idNavigation:HOVER{
+	/*
+	-ms-transform: translate3d(0px, 0px, 0);
+    -moz-transform: translate3d(0px, 0px, 0);
+    -webkit-transform: translate3d(0px, 0px, 0);
+    transform: translate3d(0px, 0px, 1);
+    *.
+	/* transform: translateY(0px);
+	-webkit-transform: translateY(0px); */
+}
+
+nav{
+	/* Make navigation fill the parent div */
+	-webkit-box-flex:0.0; /* Safari and Chrome */
+	-ms-flex:1.0; /* Internet Explorer 10 */
+	box-flex:1.0;
+	
+	width:100%;
+	
+	display: block;
+}
+#idUpperNav{
+	height: 50px;
+
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-direction:row;
+	
+	/* Internet Explorer 11 */
+	flex-direction:row;
+
+
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-direction:normal;
+	-webkit-box-orient:horizontal;
+	
+	/* W3C */
+	display:flex;
+	flex-direction:row;
+	
+
+	/* 
+box-direction:normal;
+	box-orient:horizontal;
+ */
+}
+
+.upperNavText {
+	/* nav text */
+	padding: 0 !important;
+	margin: 0 !important;
+	line-height: 50px !important;
+	font-size : 14pt !important;
+	font-family: MuseoSans-500 !important;
+	color: rgb(50, 50, 50);
+	text-transform: uppercase !important;
+	font-weight: 200 !important;
+    font-stretch: normal !important;
+    display: inline !important;
+    
+    -webkit-transition: font-size 0.2s ease-out;
+    transition: font-size 0.2s ease-out;
+}
+
+.upperNavItemLeft, .upperNavItem, .upperNavItemRight{
+	flex-grow: 1;
+	-webkit-box-flex:1.0; /* Safari and Chrome */
+	-ms-flex:1.0; /* Internet Explorer 10 */
+	box-flex:1.0;
+	
+	/* width: 0; */
+	text-align: center;
+}
+.upperNavItem, .upperNavItemLeft {
+	border-style: none none none none;
+	border-color: #CCCCCC;
+	border-width: 1px;
+}
+a.fill-div {
+	display: block;
+    height: 100%;
+    width: 100%;
+   /*  -webkit-transition: background 0.1s ease-out, -webkit-transform 0.1s ease-out;
+    transition: background 0.1s ease-out, transform 0.1s ease-out; */
+}
+a.fill-div:LINK{
+	color: #000000;
+	text-decoration:none;
+}
+a.fill-div:VISITED{
+	color: #000000;
+	text-decoration:none;
+}
+a.fill-div:HOVER{
+	/* -webkit-transform: scaleX(1.05);
+	transform: scaleX(1.05); */
+	background-color: rgba(225, 225, 225, 0.3); 
+}
+a.fill-div:ACTIVE{
+	background-color: rgba(213, 212, 214, 0.3);
+}
+.selected {
+	background-color: rgba(235, 235, 235, 0.3);
+}
+#idLowerNav{
+	height:30px;
+	text-align: center;
+	margin-top:5px;
+}
+#idLowerNav > h4 {
+	font-family: MuseoSans-500 !important;
+    font-size: 11pt !important;
+    font-weight: normal !important;
+    font-stretch: normal !important;
+    color: rgb(0.4, 0.4, 0.4) !important;
+}
+@media all and (max-width: 650px)
+{
+    .upperNavText {
+        font-size: 11pt !important;
+    }
+}
+@media all and (max-width: 455px)
+{
+    .upperNavText {
+        font-size: 8pt !important;
+    }
+}
+@media all and (min-width: 1000px)
+{
+	.upperNavItemLeft, .upperNavItem, .upperNavItemRight{
+        width: 0;
+    }
+}

@@ -1,0 +1,150 @@
+{% load staticfiles %}
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> {% block title %} Princeton Social Innovation {% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
+</head>
+<body lang="en">
+	{% block nav %}
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<div class="menu-main-menu-container">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="nav-item"><a href="/about">About</a></li>
+						<li class="nav-item"><a href="/news">News</a></li>
+						<li class="nav-item"><a href="/events">Events</a></li>
+						<li class="nav-item"><a href="/internships">Internships</a></li>
+						<li class="nav-item"><a href="/contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	{% endblock %}
+	<div id="about-top" class="jumbotron">
+		<div class="overlay">
+			<div class="container">
+				<div class="row header-info">
+					<div class="col-md-8">
+						<div class="panel">
+							<div id="core-info">
+								<!-- Fix bug: when you make the screen vertically short, vision overflows -->
+								<div id="vision">
+									<h2>Vision</h2>
+									<p>We believe in the power of sustainable social impact. We see a world in which the pursuit of socially responsible careers is the norm.</p>
+								</div>
+								<div id="mission">
+									<h2>Mission</h2>
+									<p>We educate students on viable methods of creating social value by hosting events that spark campus-wide discussions on social innovation and impact.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="core-values" class="background-white">
+		<div class="container">
+			<h1 class="subtitle">CORE VALUES</h1>
+			<hr style="width:85%; border-color:#6C7A89; opacity: .6; margin-top: 10px; margin-botton: 10px;">
+			<div class="row"> 
+				<div class="col-md-4">
+					<div class="box">
+						<img src="{% static 'psibackend/css/images/cloud1.png' %}">
+						<div class="core-value-text">
+							<h4><br>INSPIRE<br></h4>
+							<p>Host events for students that expand their knowledge on ways to integrate social impact into their lives.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="box">
+						<img src="{% static 'psibackend/css/images/net2_01.png' %}">
+						<div class="core-value-text">
+							<h4><br>CONNECT<br></h4>
+							<p>Serve as a nexus for students to form relationships with individuals and groups that provide them with opportunities that create social impact.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="box">
+						<img src="{% static 'psibackend/css/images/create_01.png' %}">
+						<div class="core-value-text">
+							<h4><br>EMPOWER<br></h4>
+							<p>Encourage students to transform the knowledge and networks we provide into tangible impact.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Make it so that when you hover over the image, it changes to the
+	     member doing something new/fun -->
+	<div id="members" class="background-gray">
+		<div class="container">
+			<h1 class="subtitle">MEET THE MEMBERS</h1>
+			<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 10px; margin-botton: 10px;">
+		</div>
+		<div class="container">
+			<div class="row">
+				{% for member in all_members %}
+				{% if member.current %}
+				<div class="col-md-4">
+					<a href="{% url 'membersdetail' member.id %}">
+					<div class="member box">
+						<div class="member img">
+							<img class="visibleboring" src="{{ member.picture.url }}">
+							<img class="invisiblefunny" src="{{ member.funnypicture.url }}">
+						</div>
+						<div class="panel">
+							<p>{{ member.name }}</p>
+							<p>{{ member.position }}</p>
+							<p>Class of {{ member.year }}</p>
+						</div>
+					</div>
+					</a>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	{% block contact %}
+	<div class="background-blue">
+		<div class="container contact">
+			<p><i>Contact Us</i></p>
+			<div class="contact-icons">
+				<a href=""><span class="fa fa-envelope-square"></span></a>
+				<a href=""><span class="fa fa-facebook-square"></span></a>
+				<a href=""><span class="fa fa-twitter-square"></span></a>
+			</div>
+			<hr style="width:50%; border-color:#6C7A89; opacity: .6; margin-top: 10px; margin-bottom: 10px">
+			<div class="footer">
+				<p><i>Princeton University</i></p><br>
+				<p><i>Princeton Social Innovation</i><p>
+			</div> 
+		</div>
+	</div>
+	{% endblock %}
+	{% block javascript %}
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
+	<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
+	<script type="text/javascript">
+		var s = skrollr.init({forceHeight: false});
+	</script>
+
+	{% endblock %}
+</body>
+</html>
