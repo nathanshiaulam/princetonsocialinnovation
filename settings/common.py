@@ -10,6 +10,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import abspath, basename, dirname, join, normpath
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
@@ -87,8 +89,7 @@ STATICFILES_FINDERS = (
 )
 
 STATICFILES_DIRS = (
-    normpath(join(DJANGO_ROOT, 'course_selection', 'static')),
-    normpath(join(DJANGO_ROOT, 'nice', 'static')),
+    normpath(join(DJANGO_ROOT, 'psibackend', 'static')),
 )
 
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
