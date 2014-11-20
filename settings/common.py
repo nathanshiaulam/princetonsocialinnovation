@@ -88,9 +88,10 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+DJANGO_ROOT = dirname(dirname(abspath(__file__)))
+
 STATICFILES_DIRS = (
     normpath(join(DJANGO_ROOT, 'psibackend', 'static')),
 )
 
-DJANGO_ROOT = dirname(dirname(abspath(__file__)))
 
