@@ -45,7 +45,7 @@ class EventsView(generic.ListView):
 
 def NewsView(request):
 	latest_news_post = Post.objects.order_by('-date')[1:5];
-	all_posts = Post.objects.all();
+	all_posts = Post.objects.all().order_by('-date');
 	first_news_post = Post.objects.order_by('-date')[:1];
 
 	return render(request, "psibackend/news.html", {
