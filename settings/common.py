@@ -62,6 +62,12 @@ WSGI_APPLICATION = 'princetonsi.wsgi.application'
 DATABASES = {
 }
 
+AWS_STORAGE_BUCKET_NAME = "princetonsocialinnovation"
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+MEDIA_URL = "https://%s.s3.amazonaws.com/" % os.environ['AWS_STORAGE_BUCKET_NAME']
+MEDIA_ROOT = ''
+AWS_ACCESS_KEY_ID = "nlam"
+AWS_SECRET_ACCESS_KEY = "w8tfkhgby"
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
