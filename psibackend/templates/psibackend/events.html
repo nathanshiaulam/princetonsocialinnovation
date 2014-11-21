@@ -81,7 +81,6 @@
 					<p>{{ event.description }}</p>
 				</div>
 			</div>	
-			{% assign name="white" %}1{% endassign %}
 		</div>
 		{% else %}
 		<div id="{{ event.identifier }}" class="event background-white">
@@ -100,7 +99,6 @@
 					<p>{{ event.description }}</p>
 				</div>
 			</div>
-			{% assign name="white" %}0{% endassign %}
 		</div>
 		{% endif %}
 	{% endfor %}
