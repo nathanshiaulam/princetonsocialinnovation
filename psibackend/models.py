@@ -56,6 +56,7 @@ class Member(models.Model):
     funnypicture = models.ImageField(upload_to='members/', blank=True, null=True);
     position = models.CharField(max_length=150);
     bio = models.TextField();
+    creationdate = models.DateTimeField(auto_now_add = True, editable=False);
     current = models.BooleanField(default=True);
 
     def thumb(self):
