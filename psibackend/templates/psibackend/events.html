@@ -64,8 +64,8 @@
 
 	{% block content %}
 	{% for event in all_events %}
-		{% if white %}
-		<div id="{{ event.identifier }}" class="event background-gray">
+		{% if event.white %}
+		<div id="{{ event.identifier }}" class="event background-white">
 			<div class="container event-item">
 				<div class="col-md-12 event-info">
 					<div class="panel">
@@ -83,7 +83,7 @@
 			</div>	
 		</div>
 		{% else %}
-		<div id="{{ event.identifier }}" class="event background-white">
+		<div id="{{ event.identifier }}" class="event background-gray">
 			<div class="container event-item">
 				<div class="col-md-12 event-info">
 					<div class="panel">
