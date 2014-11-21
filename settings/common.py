@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'psibackend',
     'bootstrapform',
     'templateaddons',
+    'storages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,6 +61,7 @@ WSGI_APPLICATION = 'princetonsi.wsgi.application'
 
 DATABASES = {
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
