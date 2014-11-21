@@ -50,7 +50,7 @@ class Internship(models.Model):
         return self.intern_role;
 
 class Member(models.Model):
-    name = models.CharField(max_length=150);
+    name = models.CharField(max_length=150); 
     year = models.CharField(max_length=150);
     picture = models.ImageField(upload_to='members/', blank=True, null=True);
     funnypicture = models.ImageField(upload_to='members/', blank=True, null=True);
