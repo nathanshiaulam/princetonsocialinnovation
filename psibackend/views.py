@@ -24,7 +24,7 @@ class AboutView(generic.ListView):
 	context_object_name = 'all_members';
 
 	def get_queryset(self):
-		return Member.objects.all().order_by('-creationdate');
+		return Member.objects.all().order_by('-position');
 
 class MembersDetailView(generic.DetailView):
 	model = Member;
