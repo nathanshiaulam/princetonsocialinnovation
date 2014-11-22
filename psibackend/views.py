@@ -19,12 +19,29 @@ class HomeView(generic.ListView):
 		queryset = Post.objects.filter();
 		return queryset.reverse()[:3]
 
-class AboutView(generic.ListView):
-	template_name = 'psibackend/about.html';
-	context_object_name = 'all_members';
+# class AboutView(generic.ListView):
+# 	template_name = 'psibackend/about.html';
+# 	context_object_name = 'all_members';
 
-	def get_queryset(self):
-		return Member.objects.filter();
+# 	def get_queryset(self):
+# 		return Member.objects.filter();
+
+def AboutView(request):
+	presidents = Member.objects.filter(position="Co-President");
+	secretary = Member.objects.filter(position="Secretary/Treasurer");
+	marketing = Member.objects.filter(position="Marketing Director");
+	speakers = Member.objects.filter(position="TEDx/Speaker Series");
+	conference = Member.objects.filter(position="Social Innovation Conference");
+	all_members = Member.objects.all();
+
+	return render(request, "psibackend/about.html", {
+		'presidents':presidents,
+		'secretary':secretary,
+		'marketing':marketing,
+		'speakers':speakers,
+		'conference':conference,
+		'all_members':all_members
+		});
 
 class MembersDetailView(generic.DetailView):
 	model = Member;

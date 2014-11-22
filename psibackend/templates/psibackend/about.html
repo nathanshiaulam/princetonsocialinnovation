@@ -98,7 +98,83 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				{% for member in all_members %}
+				{% for member in presidents %}
+				{% if member.current %}
+				<div class="col-md-4">
+					<a href="{% url 'membersdetail' member.id %}">
+					<div class="member box">
+						<div class="member img">
+							<img class="visibleboring" src="{{ member.picture.url }}">
+							<img class="invisiblefunny" src="{{ member.funnypicture.url }}">
+						</div>
+						<div class="panel">
+							<p>{{ member.name }}</p>
+							<p>{{ member.position }}</p>
+							<p>Class of {{ member.year }}</p>
+						</div>
+					</div>
+					</a>
+				</div>
+				{% endif %}
+				{% endfor %}
+				{% for member in secretary %}
+				{% if member.current %}
+				<div class="col-md-4">
+					<a href="{% url 'membersdetail' member.id %}">
+					<div class="member box">
+						<div class="member img">
+							<img class="visibleboring" src="{{ member.picture.url }}">
+							<img class="invisiblefunny" src="{{ member.funnypicture.url }}">
+						</div>
+						<div class="panel">
+							<p>{{ member.name }}</p>
+							<p>{{ member.position }}</p>
+							<p>Class of {{ member.year }}</p>
+						</div>
+					</div>
+					</a>
+				</div>
+				{% endif %}
+				{% endfor %}
+				{% for member in marketing %}
+				{% if member.current %}
+				<div class="col-md-4">
+					<a href="{% url 'membersdetail' member.id %}">
+					<div class="member box">
+						<div class="member img">
+							<img class="visibleboring" src="{{ member.picture.url }}">
+							<img class="invisiblefunny" src="{{ member.funnypicture.url }}">
+						</div>
+						<div class="panel">
+							<p>{{ member.name }}</p>
+							<p>{{ member.position }}</p>
+							<p>Class of {{ member.year }}</p>
+						</div>
+					</div>
+					</a>
+				</div>
+				{% endif %}
+				{% endfor %}
+				{% for member in speakers %}
+				{% if member.current %}
+				<div class="col-md-4">
+					<a href="{% url 'membersdetail' member.id %}">
+					<div class="member box">
+						<div class="member img">
+							<img class="visibleboring" src="{{ member.picture.url }}">
+							<img class="invisiblefunny" src="{{ member.funnypicture.url }}">
+						</div>
+						<div class="panel">
+							<p>{{ member.name }}</p>
+							<p>{{ member.position }}</p>
+							<p>Class of {{ member.year }}</p>
+						</div>
+					</div>
+					</a>
+				</div>
+				{% endif %}
+				{% endfor %}
+				{% for member in conference %}
 				{% if member.current %}
 				<div class="col-md-4">
 					<a href="{% url 'membersdetail' member.id %}">

@@ -7,7 +7,7 @@ from psibackend import views
 
 urlpatterns = patterns('',
 	url(r'^$', views.HomeView.as_view(), name='index'),
-	url(r'^about/$', views.AboutView.as_view(), name='about'),
+	url(r'^about/$', views.AboutView, name='about'),
 	url(r'^members/(?P<pk>\d+)/$', views.MembersDetailView.as_view(), name='membersdetail'),	
 	url(r'^news/$', views.NewsView, name='news'),
 	url(r'^news/(?P<pk>\d+)/$', views.NewsDetailView.as_view(), name='newsdetail'),	

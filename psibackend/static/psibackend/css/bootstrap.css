@@ -7448,5 +7448,21 @@ a img {
 .fullscreen .overlay{
   height: 80px;
 }
+
 /* End */
+
+.panel.black {
+  background-color: #222222;
+  margin-bottom: 10px;
+  height: inherit;
+}
+
+.panel.black h1{
+  font-family: "Comic-Sans", Helvetica, sans-serif;
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 /*# sourceMappingURL=bootstrap.css.map */
