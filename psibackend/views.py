@@ -32,6 +32,7 @@ def AboutView(request):
 	marketing = Member.objects.filter(position="Marketing Director");
 	speakers = Member.objects.filter(position="TEDx/Speaker Series");
 	conference = Member.objects.filter(position="Social Innovation Conference");
+	worldofe = Member.objects.filter(position="World Of E");
 	all_members = Member.objects.all();
 
 	return render(request, "psibackend/about.html", {
