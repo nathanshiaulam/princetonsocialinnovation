@@ -41,6 +41,7 @@ def AboutView(request):
 		'marketing':marketing,
 		'speakers':speakers,
 		'conference':conference,
+		'worldofe':worldofe
 		'all_members':all_members
 		});
 
