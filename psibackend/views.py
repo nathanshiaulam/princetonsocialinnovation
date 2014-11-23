@@ -16,8 +16,8 @@ class HomeView(generic.ListView):
 
 	def get_queryset(self):
 		"""Return the last five published posts."""
-		queryset = Post.objects.all().order_by('-date');
-		return queryset.reverse()[:3]
+		queryset = Post.objects.all().order_by('-date')[:3];
+		return queryset
 
 # class AboutView(generic.ListView):
 # 	template_name = 'psibackend/about.html';
