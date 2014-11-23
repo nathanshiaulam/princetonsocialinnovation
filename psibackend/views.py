@@ -16,7 +16,7 @@ class HomeView(generic.ListView):
 
 	def get_queryset(self):
 		"""Return the last five published posts."""
-		queryset = Post.objects.filter();
+		queryset = Post.objects.all().order_by('-date');
 		return queryset.reverse()[:3]
 
 # class AboutView(generic.ListView):
