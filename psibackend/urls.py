@@ -18,5 +18,6 @@ urlpatterns = patterns('',
 	url(r'^findinterns/$', views.internship_post, name='findinterns'),
 	url(r'^contact/$', views.contact_view, name='contact'),
 	url(r'^thankyou_contact/$', views.thankyou_contact, name='thankyou_contact'),
+	url(r'^tedx/$', views.tedx_view, name='tedx'),
 	
 )+ static(settings.MEDIA_URL,  document_root=settings.MEDIA_ROOT)

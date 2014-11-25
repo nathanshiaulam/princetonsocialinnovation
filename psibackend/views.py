@@ -127,6 +127,8 @@ def thankyou_intern(request):
 def thankyou_contact(request):
 		return render_to_response('psibackend/thankyou_contact.html')
 
+def tedx_view(request):
+		return render_to_response('psibackend/TEDx.html')
 
 
 
