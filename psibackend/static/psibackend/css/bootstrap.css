@@ -6597,7 +6597,7 @@ button.close {
 }
 
 #about-top .container .header-info h2 {
-  color: white;
+  color: #FF8F00;
   line-height: 1;
   font-size: 2em;
   font-family: 'Comic-Sans', Helvetica, sans-serif ;
@@ -6881,84 +6881,6 @@ a {
 a img {
   border: 0;
 }
-
-/* Figcaption cool thing */
-
-/*.project-image {
-  display:block;
-  margin:auto;
-}
-.photo-grid {
-  margin: 1em auto;
-  max-width: 1106px;
-  text-align: center;
-}
- 
-.photo-grid li {
-  border: 5px solid white;
-  display: inline-block;
-  margin: 1em;
-  width: 100%;
-}
- 
- 
-.photo-grid figure {
-  overflow: hidden;
-  position: relative;
-  width: inherit;
-  height: auto;
-}
-
-
-.photo-grid li:hover figcaption {
-  opacity: 1;
-}
-
-.photo-grid img {
-  display: block;
-  height: auto;
-  -webkit-transition: all 300ms;
-  -moz-transition: all 300ms;
-  transition: all 300ms;
-  max-width: 100%;
-}
- 
-.photo-grid li:hover img {
-  -webkit-transform: scale(1.4);
-  -moz-transform: scale(1.4);
-  transform: scale(1.4);
-}
-
-.photo-grid figcaption {
-  background: rgba(0,0,0,0.8);
-  color: white;
-  display: table;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  -webkit-transition: all 300ms;
-  -moz-transition: all 300ms;
-  transition: all 300ms;
-  -webkit-transition-delay: 100ms;
-  -moz-transition-delay: 100ms;
-  transition-delay: 100ms;
-  z-index: 100;
-}
-
-.photo-grid figcaption p {
-  display: table-cell;
-  height: inherit;
-  width: inherit;
-  top: -40px;
-  -webkit-transition: all 300ms ease-out;
-  -moz-transition: all 300ms ease-out;
-  transition: all 300ms ease-out;
-  vertical-align: middle;
-  font-size: 1.5em;
-  color: #D2D7D3;
-}*/
 
 /* News css */
 
