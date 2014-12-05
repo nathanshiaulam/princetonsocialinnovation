@@ -19,12 +19,6 @@ class HomeView(generic.ListView):
 		queryset = Post.objects.all().order_by('-date')[:3];
 		return queryset
 
-# class AboutView(generic.ListView):
-# 	template_name = 'psibackend/about.html';
-# 	context_object_name = 'all_members';
-
-# 	def get_queryset(self):
-# 		return Member.objects.filter();
 
 def AboutView(request):
 	presidents = Member.objects.filter(position="Co-President");
