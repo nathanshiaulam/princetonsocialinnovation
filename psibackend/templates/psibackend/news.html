@@ -1,7 +1,9 @@
-{% load staticfiles %}
-{% load assign %} 
+{% extends "base.html" %}
 
-<html>
+{% load staticfiles %}
+{% load assign %}
+
+{% block head %}
 <head>
 	<meta charset="UTF-8">
 	<title> {% block title %} Princeton Social Innovation {% endblock %}</title>
@@ -13,119 +15,78 @@
 	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 </head>
-<body lang="en">
-	{% block nav %}
-	<nav class="navbar navbar-default newsnav" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">
+{% endblock head %}
+
+{% block content %}
+<div class="overlay newsoverlay">
+</div>
+<div id="news-top" class="container">
+	<div id="this-carousel-id" class="carousel">
+		<div class="carousel-inner">
+		{% for post in first_news_post %}
+		<div class="item active">
+				<a href="{% url 'newsdetail' post.id%}">
+					<div class="item-picture" style="background:url({{post.picture.url}}); background-size:cover;" alt="{{post.title}}"></div>
+					<div class="carousel-caption panel">
+						<p>{{ post.title }}</p>
+					</div>
 				</a>
 			</div>
-			<div class="collapse navbar-collapse">
-				<div class="menu-main-menu-container">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="nav-item"><a href="/about">About</a></li>
-						<li class="nav-item"><a href="/news">News</a></li>
-						<li class="nav-item"><a href="/events">Events</a></li>
-						<li class="nav-item"><a href="/internships">Internships</a></li>
-						<li class="nav-item"><a href="/contact">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-	{% endblock %}
-	{% block content %}
-	<div class="overlay newsoverlay">
-	</div>
-	<div id="news-top" class="container">
-		<div id="this-carousel-id" class="carousel">
-			<div class="carousel-inner">
-			{% for post in first_news_post %}
-			<div class="item active">
-					<a href="{% url 'newsdetail' post.id%}">
-						<div class="item-picture" style="background:url({{post.picture.url}}); background-size:cover;" alt="{{post.title}}"></div>
-						<div class="carousel-caption panel">
-							<p>{{ post.title }}</p>
-						</div>
-					</a>
-				</div>
-			{% endfor %}
-			{% for post in latest_news_post %}
-				<div class="item">
-					<a href="{% url 'newsdetail' post.id%}">
-						<div class="item-picture" style="background:url({{post.picture.url}}); background-size:cover;" alt="{{post.title}}"></div>
-						<div class="carousel-caption panel">
-							<p>{{ post.title }}</p>
-						</div>
-					</a>
-				</div>
-			{% endfor %}
-			</div>
-			<a class="carousel-control left" href="#this-carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-			<a class="carousel-control right" href="#this-carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></a>
-		</div>
-	</div>
-	<div class="background-white">
-		<div class="container info-block">
-			<h1>NEWS</h1>
-			<hr style="width:85%; border-color:#6C7A89; opacity: .6; margin-top: 40px; margin-bottom: 20px">
-			{% for post in all_posts %}
-			<a href="{% url 'newsdetail' post.id%}">
-				<div class="container news-item">
-						<figure class="featured-image" style="background: url({{post.picture.url}});" >
-						</figure>
-					<div class="entry-header">
-						<h2 class="glow-orange entry-title">{{post.title}}</h2>
+		{% endfor %}
+		{% for post in latest_news_post %}
+			<div class="item">
+				<a href="{% url 'newsdetail' post.id%}">
+					<div class="item-picture" style="background:url({{post.picture.url}}); background-size:cover;" alt="{{post.title}}"></div>
+					<div class="carousel-caption panel">
+						<p>{{ post.title }}</p>
 					</div>
-					<div class="entry-content">
-						<p>{{post.body|truncatechars:300}}</p>
+				</a>
+			</div>
+		{% endfor %}
+		</div>
+		<a class="carousel-control left" href="#this-carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		<a class="carousel-control right" href="#this-carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></a>
+	</div>
+</div>
+<div class="background-white">
+	<div class="container info-block">
+		<h1>NEWS</h1>
+		<hr style="width:85%; border-color:#6C7A89; opacity: .6; margin-top: 40px; margin-bottom: 20px">
+		{% for post in all_posts %}
+		<a href="{% url 'newsdetail' post.id%}">
+			<div class="container news-item">
+					<figure class="featured-image" style="background: url({{post.picture.url}});" >
+					</figure>
+				<div class="entry-header">
+					<h2 class="glow-orange entry-title">{{post.title}}</h2>
+				</div>
+				<div class="entry-content">
+					<p>{{post.body|truncatechars:300}}</p>
+				</div>
+				<div class="entry-meta">
+					<div class="date glow-orange">
+						{{post.date}}
 					</div>
-					<div class="entry-meta">
-						<div class="date glow-orange">
-							{{post.date}}
-						</div>
-						<div class="readmore-button glow-orange">
-							Read More
-						</div>
+					<div class="readmore-button glow-orange">
+						Read More
 					</div>
 				</div>
-			</a>
-			{% endfor %}
-		</div>
-	</div>
-	{% endblock %}
-	{% block contact %}
-	<div class="background-blue">
-		<div class="container contact">
-			<p><i>Contact Us</i></p>
-			<div class="contact-icons">
-				<a href=""><span class="fa fa-envelope-square"></span></a>
-				<a href=""><span class="fa fa-facebook-square"></span></a>
-				<a href=""><span class="fa fa-twitter-square"></span></a>
 			</div>
-			<hr style="width:50%; border-color:#6C7A89; opacity: .6; margin-top: 10px; margin-bottom: 10px">
-			<div class="footer">
-				<p><i>Princeton University</i></p><br>
-				<p><i>Princeton Social Innovation</i><p>
-			</div> 
-		</div>
+		</a>
+		{% endfor %}
 	</div>
-	{% endblock %}
-	{% block javascript %}
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'psibackend/css/flexslider/jquery.flexslider-min.js' %}"></script>
-	<script>
-	    $('.carousel').carousel({
-			interval: 5000
-		})
-	</script>
-	<script type="text/javascript">
-		var s = skrollr.init({forceHeight: false});
-	</script>
-	{% endblock %}
-</body>
-</html>
+</div>
+{% endblock content %}
+	
+{% block script %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'psibackend/css/flexslider/jquery.flexslider-min.js' %}"></script>
+<script>
+    $('.carousel').carousel({
+		interval: 5000
+	})
+</script>
+{% endblock script %}
+

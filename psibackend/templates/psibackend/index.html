@@ -1,6 +1,8 @@
+{% extends "base.html" %}
+
 {% load staticfiles %}
 
-<html>
+{% block head %}
 <head>
 	<meta charset="UTF-8">
 	<title> {% block title %} Princeton Social Innovation {% endblock %}</title>
@@ -8,95 +10,58 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
+	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}">
 	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 </head>
-<body lang="en">
-	{% block nav %}
-	<nav class="navbar navbar-default" role="navigation">
+{% endblock head %}
+{% block content %} 
+<div id="index-top" class="jumbotron">
+	<div class="overlay">
 		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">
+			<div class="header-text" data-0="opacity: 1;" data-400="opacity:0; ">
+				<h1 class="homepage-title">Empowering students to create <span style="color:#FF8F00;">Social Value</span></h1>
+				<h2>Princeton Social Innovation brings <!-- improve wording -->events and innovators to <b>Princeton University</b> to educate and prepare students for <b>social impact careers</b>.</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="background-white">
+	<div class="container info-block">
+		<h1>MOST RECENT</h1>
+		<hr style="width:85%; border-color:#6C7A89; opacity: .6; margin-top: 40px; margin-bottom: 20px">
+		{% if all_posts %}
+			{% for post in all_posts %}
+			<div class="container news-item">
+				<a href="{% url 'newsdetail' post.id%}"><figure class="featured-image" style="background:url({{ post.picture.url }});" ></figure></a>
+				<div class="entry-header">
+					<h2 class="entry-title"><a href="{% url 'newsdetail' post.id%}" title="{{ post.title }}" class="glow-orange">{{ post.title }}</a></h2>
+				</div>
+				<a href="{% url 'newsdetail' post.id%}">
+					<div class="entry-content">
+						<p>{{ post.body|truncatechars:300 }}</p>
+					</div>
 				</a>
-			</div>
-			<div class="collapse navbar-collapse">
-				<div class="menu-main-menu-container">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="nav-item"><a href="/about">About</a></li>
-						<li class="nav-item"><a href="/news">News</a></li>
-						<li class="nav-item"><a href="/events">Events</a></li>
-						<li class="nav-item"><a href="/internships">Internships</a></li>
-						<li class="nav-item"><a href="/contact">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-	{% endblock %}
-	<div id="index-top" class="jumbotron">
-		<div class="overlay">
-			<div class="container">
-				<div class="header-text" data-0="opacity: 1;" data-400="opacity:0; ">
-					<h1 class="homepage-title">Empowering students to create <span style="color:#FF8F00;">Social Value</span></h1>
-					<h2>Princeton Social Innovation brings <!-- improve wording -->events and innovators to <b>Princeton University</b> to educate and prepare students for <b>social impact careers</b>.</h2>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="background-white">
-		<div class="container info-block">
-			<h1>MOST RECENT</h1>
-			<hr style="width:85%; border-color:#6C7A89; opacity: .6; margin-top: 40px; margin-bottom: 20px">
-			{% if all_posts %}
-				{% for post in all_posts %}
-				<div class="container news-item">
-					<a href="{% url 'newsdetail' post.id%}"><figure class="featured-image" style="background:url({{ post.picture.url }});" ></figure></a>
-					<div class="entry-header">
-						<h2 class="entry-title"><a href="{% url 'newsdetail' post.id%}" title="{{ post.title }}" class="glow-orange">{{ post.title }}</a></h2>
+				<div class="entry-meta">
+					<div class="date">
+						<a href="{% url 'newsdetail' post.id%}" class="glow-orange">{{ post.date }}</a>
 					</div>
-					<a href="{% url 'newsdetail' post.id%}">
-						<div class="entry-content">
-							<p>{{ post.body|truncatechars:300 }}</p>
-						</div>
-					</a>
-					<div class="entry-meta">
-						<div class="date">
-							<a href="{% url 'newsdetail' post.id%}" class="glow-orange">{{ post.date }}</a>
-						</div>
-						<div class="readmore-button">
-							<a href="{% url 'newsdetail' post.id%}" class="glow-orange">Read More</a>
-						</div>
+					<div class="readmore-button">
+						<a href="{% url 'newsdetail' post.id%}" class="glow-orange">Read More</a>
 					</div>
 				</div>
-				{% endfor %}
-			{% endif %}
-		</div>
-	</div>
-	{% block contact %}
-	<div class="background-blue">
-		<div class="container contact">
-			<p><i>Contact Us</i></p>
-			<div class="contact-icons">
-				<a href=""><span class="fa fa-envelope-square"></span></a>
-				<a href=""><span class="fa fa-facebook-square"></span></a>
-				<a href=""><span class="fa fa-twitter-square"></span></a>
 			</div>
-			<hr style="width:50%; border-color:#6C7A89; opacity: .6; margin-top: 10px; margin-bottom: 10px">
-			<div class="footer">
-				<p><i>Princeton University</i></p><br>
-				<p><i>Princeton Social Innovation</i><p>
-			</div> 
-		</div>
+			{% endfor %}
+		{% endif %}
 	</div>
-	{% endblock %}
-	{% block script %}
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
-	<script type="text/javascript">
-		var s = skrollr.init({forceHeight: false});
-	</script>
-	{% endblock %}
-</body>
-</html>
+</div>
+{% endblock content %}
+{% block script %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
+<script type="text/javascript">
+	var s = skrollr.init({forceHeight: false});
+</script>
+{% endblock script %}

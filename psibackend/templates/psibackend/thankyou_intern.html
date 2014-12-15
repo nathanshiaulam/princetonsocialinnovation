@@ -1,7 +1,8 @@
-{% load staticfiles %}
-{% load bootstrap %}
+{% extends "base.html" %}
 
-<html>
+{% load staticfiles %}
+
+{% block head %}
 <head>
 	<meta charset="UTF-8">
 	<title> {% block title %} Princeton Social Innovation {% endblock %}</title>
@@ -9,64 +10,21 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
-	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}">
 	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 </head>
-<body lang="en">
-	{% block nav %}
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">
-				</a>
-			</div>
-			<div class="collapse navbar-collapse">
-				<div class="menu-main-menu-container">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="nav-item"><a href="/about">About</a></li>
-						<li class="nav-item"><a href="/news">News</a></li>
-						<li class="nav-item"><a href="/events">Events</a></li>
-						<li class="nav-item"><a href="/internships">Internships</a></li>
-						<li class="nav-item"><a href="/contact">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-	{% endblock %}
-	<div id="find-interns" class="overlay">
+{% endblock head %}
+{% block content %}
+<div id="find-interns" class="overlay">
+</div>
+<div id="thankyou-interns" class="background-white">
+	<div class="container info-block">
+		<h1>Thank you! Your internship description will be posted after admin approval.</h1>
 	</div>
-	<div id="thankyou-interns" class="background-white">
-		<div class="container info-block">
-			<h1>Thank you! Your internship description will be posted after admin approval.</h1>
-		</div>
-	</div>
-	{% block contact %}
-	<div class="background-blue">
-		<div class="container contact">
-			<p><i>Contact Us</i></p>
-			<div class="contact-icons">
-				<a href=""><span class="fa fa-envelope-square"></span></a>
-				<a href=""><span class="fa fa-facebook-square"></span></a>
-				<a href=""><span class="fa fa-twitter-square"></span></a>
-			</div>
-			<hr style="width:50%; border-color:#6C7A89; opacity: .6; margin-top: 10px; margin-bottom: 10px">
-			<div class="footer">
-				<p><i>Princeton University</i></p><br>
-				<p><i>Princeton Social Innovation</i><p>
-			</div> 
-		</div>
-	</div>
-	{% endblock %}
-	{% block script %}
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
-	<script type="text/javascript">
-		var s = skrollr.init({forceHeight: false});
-	</script>
-	{% endblock %}
-</body>
-</html>
+</div>
+{% endblock content %}
+	
+{% block script %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
+{% endblock script %}

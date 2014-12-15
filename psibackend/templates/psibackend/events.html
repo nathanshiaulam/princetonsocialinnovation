@@ -1,7 +1,9 @@
+{% extends "base.html" %}
+
 {% load staticfiles %}
 {% load assign %}
- 
-<html>
+
+{% block head %}
 <head>
 	<meta charset="UTF-8">
 	<title> {% block title %} Princeton Social Innovation {% endblock %}</title>
@@ -9,148 +11,110 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
+	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}">
 	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 </head>
-<body lang="en">
-	{% block nav %}
-	<nav class="navbar navbar-default" role="navigation">
+{% endblock head %}
+{% block content %} 
+<div id="events-top" class="jumbotron">
+	<div class="overlay">
 		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">
-				</a>
-			</div>
-			<div class="collapse navbar-collapse">
-				<div class="menu-main-menu-container">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="nav-item"><a href="/about">About</a></li>
-						<li class="nav-item"><a href="/news">News</a></li>
-						<li class="nav-item"><a href="/events">Events</a></li>
-						<li class="nav-item"><a href="/internships">Internships</a></li>
-						<li class="nav-item"><a href="/contact">Contact</a></li>
-					</ul>
-				</div>
+			<div class="events-header" data-0="opacity: 1;" data-400="opacity:0; ">
+				<h2>“If money could have <span style="color:#FF8F00">changed the world</span>, money would have changed the world.”</h2><br>
+				<p><i>-Sharad Vivek Sagar</i></p>
 			</div>
 		</div>
-	</nav>
-	{% endblock %}
-	<div id="events-top" class="jumbotron">
-		<div class="overlay">
-			<div class="container">
-				<div class="events-header" data-0="opacity: 1;" data-400="opacity:0; ">
-					<h2>“If money could have <span style="color:#FF8F00">changed the world</span>, money would have changed the world.”</h2><br>
-					<p><i>-Sharad Vivek Sagar</i></p>
-				</div>
-			</div>
-			<div class="sub-header">
-				<h3 class="move" data-0="opacity: 1;" data-400="opacity:0;">See how we <span style="color:#FF8F00">make change</span></h3>
-			</div>
-			{% block events-nav %}
-			<div class="nav-event stick">
-				{% for event in all_events %}
-					<a class="smoothScroll" href="#{{ event.identifier }}">
-						<div class="panel sub-item">
-							<p>{{ event.title }}</p>
-						</div>
-					</a>
-				{% endfor %}
-				<a class="smoothScroll" href="">
-					<div class="panel item">
-						<p class="">Events</p>
+		<div class="sub-header">
+			<h3 class="move" data-0="opacity: 1;" data-400="opacity:0;">See how we <span style="color:#FF8F00">make change</span></h3>
+		</div>
+		{% block events-nav %}
+		<div class="nav-event stick">
+			{% for event in all_events %}
+				<a class="smoothScroll" href="#{{ event.identifier }}">
+					<div class="panel sub-item">
+						<p>{{ event.title }}</p>
 					</div>
 				</a>
+			{% endfor %}
+			<a class="smoothScroll" href="">
+				<div class="panel item">
+					<p class="">Events</p>
+				</div>
+			</a>
+		</div>
+		{% endblock %}
+	</div>
+</div>
+{% for event in all_events %}
+	{% if event.white %}
+	<div id="{{ event.identifier }}" class="event background-white">
+		<div class="container event-item">
+			<div class="col-md-12 event-info">
+				<div class="panel">
+					<h1>{{ event.title }}</h1>
+				</div>
+				<div class="panel">
+					<div class="meta-info">
+						<p class="date">{{ event.date.date }}</p>
+						<p class="time">{{ event.date.time }}</p>
+					</div>
+				</div>
+				<h1 class="location">{{ event.location }}</h1>
+				<p>{{ event.description }}</p>
 			</div>
-			{% endblock %}
+		</div>	
+	</div>
+	{% else %}
+	<div id="{{ event.identifier }}" class="event background-gray">
+		<div class="container event-item">
+			<div class="col-md-12 event-info">
+				<div class="panel">
+					<h1>{{ event.title }}</h1>
+				</div>
+				<div class="panel">
+					<div class="meta-info">
+						<p class="date">{{ event.date.date }}</p>
+						<p class="time">{{ event.date.time }}</p>
+					</div>
+				</div>
+				<h1 class="location">{{ event.location }}</h1>
+				<p>{{ event.description }}</p>
+			</div>
 		</div>
 	</div>
+	{% endif %}
+{% endfor %}
+{% endblock content%}
 
-	{% block content %}
-	{% for event in all_events %}
-		{% if event.white %}
-		<div id="{{ event.identifier }}" class="event background-white">
-			<div class="container event-item">
-				<div class="col-md-12 event-info">
-					<div class="panel">
-						<h1>{{ event.title }}</h1>
-					</div>
-					<div class="panel">
-						<div class="meta-info">
-							<p class="date">{{ event.date.date }}</p>
-							<p class="time">{{ event.date.time }}</p>
-						</div>
-					</div>
-					<h1 class="location">{{ event.location }}</h1>
-					<p>{{ event.description }}</p>
-				</div>
-			</div>	
-		</div>
-		{% else %}
-		<div id="{{ event.identifier }}" class="event background-gray">
-			<div class="container event-item">
-				<div class="col-md-12 event-info">
-					<div class="panel">
-						<h1>{{ event.title }}</h1>
-					</div>
-					<div class="panel">
-						<div class="meta-info">
-							<p class="date">{{ event.date.date }}</p>
-							<p class="time">{{ event.date.time }}</p>
-						</div>
-					</div>
-					<h1 class="location">{{ event.location }}</h1>
-					<p>{{ event.description }}</p>
-				</div>
-			</div>
-		</div>
-		{% endif %}
-	{% endfor %}
-	{% endblock %}
-
-	{% block contact %}
-	<div class="background-blue">
-		<div class="container contact">
-			<p><i>Contact Us</i></p>
-			<div class="contact-icons">
-				<a href=""><span class="fa fa-envelope-square"></span></a>
-				<a href=""><span class="fa fa-facebook-square"></span></a>
-				<a href=""><span class="fa fa-twitter-square"></span></a>
-			</div>
-			<hr style="width:50%; border-color:#6C7A89; opacity: .6; margin-top: 10px; margin-bottom: 10px">
-			<div class="footer">
-				<p><i>Princeton University</i></p><br>
-				<p><i>Princeton Social Innovation</i><p>
-			</div> 
-		</div>
-	</div>
-	{% endblock %}
-	{% block javascript %}
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
-	<script type="text/javascript">
-		var s = skrollr.init({forceHeight: false});
-	</script>
-	<script>
-		$(document).ready(function() {
-			$('.nav-event').hover(
-				function(){
-       		 		$(".sub-item").slideDown(200);
-       		 		$(".move").fadeTo( "fast", 0);
-       		 	},
-				function(){
-					$(".sub-item").slideUp(200);
-       		 		$(".move").fadeTo( "slow", 1);
-			});
-			$('.nav-event').hover(
-				function(){
-					$(".panel.item").css("background-color", "#6C7A89");
-				},
-				function(){
-					$(".panel.item").css("background-color", "rgba(34, 49, 63, 0.7)");
-			});
+{% block script %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
+<script type="text/javascript">
+	var s = skrollr.init({forceHeight: false});
+</script>
+<script>
+	$(document).ready(function() {
+		$('.nav-event').hover(
+			function(){
+   		 		$(".sub-item").slideDown(200);
+   		 		$(".move").fadeTo( "fast", 0);
+   		 	},
+			function(){
+				$(".sub-item").slideUp(200);
+   		 		$(".move").fadeTo( "slow", 1);
 		});
-	</script>
-	{% endblock %}
+		$('.nav-event').hover(
+			function(){
+				$(".panel.item").css("background-color", "#6C7A89");
+			},
+			function(){
+				$(".panel.item").css("background-color", "rgba(34, 49, 63, 0.7)");
+		});
+	});
+</script>
+{% endblock script %}
 </body>
 </html>
 

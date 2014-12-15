@@ -1,8 +1,9 @@
+{% extends "base.html" %}
+
 {% load staticfiles %}
-{% load bootstrap %}
 {% load assign %} 
 
-<html>
+{% block head %}
 <head>
 	<meta charset="UTF-8">
 	<title> {% block title %} Princeton Social Innovation {% endblock %}</title>
@@ -10,108 +11,68 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
+	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}">
 	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 </head>
-<body lang="en">
-	{% block nav %}
-	<nav class="navbar navbar-default" role="navigation">
+{% endblock head %}
+{% block content %}
+<div id="internships-top" class="jumbotron">
+	<div class="overlay">
 		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">
-				</a>
-			</div>
-			<div class="collapse navbar-collapse">
-				<div class="menu-main-menu-container">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="nav-item"><a href="/about">About</a></li>
-						<li class="nav-item"><a href="/news">News</a></li>
-						<li class="nav-item"><a href="/events">Events</a></li>
-						<li class="nav-item"><a href="/internships">Internships</a></li>
-						<li class="nav-item"><a href="/contact">Contact</a></li>
-					</ul>
-				</div>
+			<div class="internships-header" data-0="opacity: 1;" data-400="opacity:0; ">
+				<h2>“You don’t learn to walk by following rules. You <span style="color:#FF8F00">learn by doing</span> and falling over.”</h2><br>
+				<p><i>-Richard Branson</i></p>
 			</div>
 		</div>
-	</nav>
-	{% endblock %}
-
-	{% block content %}
-	<div id="internships-top" class="jumbotron">
-		<div class="overlay">
-			<div class="container">
-				<div class="internships-header" data-0="opacity: 1;" data-400="opacity:0; ">
-					<h2>“You don’t learn to walk by following rules. You <span style="color:#FF8F00">learn by doing</span> and falling over.”</h2><br>
-					<p><i>-Richard Branson</i></p>
-				</div>
-			</div>
-			<div class="container student-button">
-				<h2>Find Internships Here</h2>
-			</div>
-			<a href="#first-internship" class="scroll_down smoothScroll">
-				<span class="glyphicon glyphicon-hand-down navglyphicon"></span>
-			</a>
+		<div class="container student-button">
+			<h2>Find Internships Here</h2>
 		</div>
+		<a href="#first-internship" class="scroll_down smoothScroll">
+			<span class="glyphicon glyphicon-hand-down navglyphicon"></span>
+		</a>
 	</div>
-	<div class="background-white">
-		{% assign name="first" %}1{% endassign %}
-		{% for internship in all_internships %}
-			{% if internship.approved %}
-			{% if first %}
-			<div id="first-internship" class="container internship-item">
-				<a href="{% url 'internshipsdetail' internship.id%}"><h1>{{ internship.intern_role }}</h1>
-				<h3>{{ internship.employer }}</h3>
-				<p>{{ internship.description|truncatechars:300 }}</p></a>
-				<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 40px; margin-bottom: 20px">
-				{% assign name="first" %}0{% endassign %}
-			</div>
-			{% else %}
-			<div class="container internship-item">
-				<a href="{% url 'internshipsdetail' internship.id%}"><h1>{{ internship.intern_role }}</h1>
-				<h3>{{ internship.employer }}</h3>
-				<p>{{ internship.description|truncatechars:300 }}</p></a>
-				<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 40px; margin-bottom: 20px">
-			</div>
-			{% endif %}
-			{% endif %}
-		{% endfor %}
-	</div>
-	<div class="background-gray">
-		<div class="container buttons">
-			<h2>Employer?</h2>
-			<a href="/findinterns">
-				<button type="button" class="btn btn-custom">Add Internships Here</button>
-			</a>
+</div>
+<div class="background-white">
+	{% assign name="first" %}1{% endassign %}
+	{% for internship in all_internships %}
+		{% if internship.approved %}
+		{% if first %}
+		<div id="first-internship" class="container internship-item">
+			<a href="{% url 'internshipsdetail' internship.id%}"><h1>{{ internship.intern_role }}</h1>
+			<h3>{{ internship.employer }}</h3>
+			<p>{{ internship.description|truncatechars:300 }}</p></a>
+			<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 40px; margin-bottom: 20px">
+			{% assign name="first" %}0{% endassign %}
 		</div>
+		{% else %}
+		<div class="container internship-item">
+			<a href="{% url 'internshipsdetail' internship.id%}"><h1>{{ internship.intern_role }}</h1>
+			<h3>{{ internship.employer }}</h3>
+			<p>{{ internship.description|truncatechars:300 }}</p></a>
+			<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 40px; margin-bottom: 20px">
+		</div>
+		{% endif %}
+		{% endif %}
+	{% endfor %}
+</div>
+<div class="background-gray">
+	<div class="container buttons">
+		<h2>Employer?</h2>
+		<a href="/findinterns">
+			<button type="button" class="btn btn-custom">Add Internships Here</button>
+		</a>
 	</div>
-	{% endblock %}
+</div> 
+{% endblock content %}
 	
-	{% block contact %}
-	<div class="background-blue">
-		<div class="container contact">
-			<p><i>Contact Us</i></p>
-			<div class="contact-icons">
-				<a href=""><span class="fa fa-envelope-square"></span></a>
-				<a href=""><span class="fa fa-facebook-square"></span></a>
-				<a href=""><span class="fa fa-twitter-square"></span></a>
-			</div>
-			<hr style="width:50%; border-color:#6C7A89; opacity: .6; margin-top: 10px; margin-bottom: 10px">
-			<div class="footer">
-				<p><i>Princeton University</i></p><br>
-				<p><i>Princeton Social Innovation</i><p>
-			</div> 
-		</div>
-	</div>
-	{% endblock %}
 
-	{% block script %}
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
-	<script type="text/javascript">
-		var s = skrollr.init({forceHeight: false});
-	</script>
-	{% endblock %}
-</body>
-</html>
+{% block script %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
+<script type="text/javascript">
+	var s = skrollr.init({forceHeight: false});
+</script>
+{% endblock script %}
