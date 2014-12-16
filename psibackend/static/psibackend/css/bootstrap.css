@@ -7373,6 +7373,23 @@ a img {
 
 /* End */
 
+/* Font Modifications */
+
+/* lato to be overwritten for headers and such */
+body {
+  font-family: "lato", sans-serif;
+}
+
+h2.entry-title {
+  font-family: "franklin-gothic-urw-comp", sans-serif;
+}
+
+.panel.black {
+  background-color: #222222;
+  margin-bottom: 10px;
+  height: inherit;
+}
+
 .panel.black {
   background-color: #222222;
   margin-bottom: 10px;
