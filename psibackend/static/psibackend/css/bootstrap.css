@@ -7383,7 +7383,13 @@ body {
 
 h1.homepage-title {
   font-family: "pragmatica-web-condensed", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+div.header-text h2 {
+  font-family: "lato", sans-serif;
+  font-weight: 100;
+  font-size: 16pt;
 }
 
 h2.entry-title {
