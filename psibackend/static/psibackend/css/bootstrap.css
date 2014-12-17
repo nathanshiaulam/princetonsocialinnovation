@@ -7381,8 +7381,13 @@ body {
   font-weight: 200;
 }
 
+h1.homepage-title {
+  font-family: "pragmatica-web-condensed", sans-serif;
+  font-weight: 300;
+}
+
 h2.entry-title {
-  font-family: "franklin-gothic-urw-comp", sans-serif;
+  font-family: "franklin-gothic-ext-comp-urw", sans-serif;
 }
 
 .panel.black {
