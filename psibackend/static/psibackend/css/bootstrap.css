@@ -7378,7 +7378,7 @@ a img {
 /* lato to be overwritten for headers and such */
 body {
   font-family: "lato", sans-serif;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 h2.entry-title {
