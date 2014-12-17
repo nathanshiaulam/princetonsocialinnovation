@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
 	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
+  <meta http-equiv="refresh" content="5;URL='/internships/'" />
 </head>
 {% endblock head %}
 {% block content %}
@@ -20,6 +21,7 @@
 <div id="thankyou-interns" class="background-white">
 	<div class="container info-block">
 		<h1>Thank you! Your internship description will be posted after admin approval.</h1>
+    Redirecting in <span id="countdown">5</span>.
 	</div>
 </div>
 {% endblock content %}
@@ -27,4 +29,20 @@
 {% block script %}
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript">
+(function () {
+    var timeLeft = 5,
+        cinterval;
+
+    var timeDec = function (){
+        timeLeft--;
+        document.getElementById('countdown').innerHTML = timeLeft;
+        if(timeLeft === 0){
+            clearInterval(cinterval);
+        }
+    };
+
+    cinterval = setInterval(timeDec, 1000);
+})();
+</script>
 {% endblock script %}
