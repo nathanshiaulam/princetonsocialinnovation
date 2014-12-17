@@ -7382,7 +7382,6 @@ body {
 }
 
 h2.entry-title {
-<<<<<<< HEAD
   font-family: "franklin-gothic-ext-comp-urw", sans-serif;
 }
 
@@ -7390,9 +7389,7 @@ h2.entry-title {
   background-color: #222222;
   margin-bottom: 10px;
   height: inherit;
-=======
   font-family: "franklin-gothic-urw-comp", sans-serif;
->>>>>>> 35e8831d16989f66976a2d6cf396a7c3cecb383d
 }
 
 .panel.black {
