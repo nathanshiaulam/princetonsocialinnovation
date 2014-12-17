@@ -900,7 +900,6 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -6428,7 +6427,8 @@ button.close {
 .navbar .navbar-nav li {
   padding: 0 20px;
   height: 100%;
-  font-family: "Comic-Sans", "Helvetica", sans-serif;
+  font-family: "lato", sans-serif;
+  font-weight: 300;
 }
 
 .navbar .navbar-nav li a {
