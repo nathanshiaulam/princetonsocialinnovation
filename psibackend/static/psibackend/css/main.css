@@ -922,6 +922,13 @@ a img {
   font-size: 20px;
 }
 
+.thankyou-image {
+  background-size: cover;
+  background-image: url('images/thanks.jpg');
+  width: 100vw;
+  height: 30vh;
+}
+
 .buttons h2 {
   text-align: center;
   color: #222222;
