@@ -306,14 +306,10 @@ div.background-blue, div#page-wrapper:after {
   display: table;
   background-size: cover;
   width: 100%;
-  height: 50%;
+  height: 75%;
   top: 0;
   left: 0;
   margin-bottom: 0;  
-}
-
-#team-top .overlay {
-  height: 50%;
 }
 
 #members .container {
