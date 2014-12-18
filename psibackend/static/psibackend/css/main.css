@@ -36,7 +36,7 @@
 /* sticky footer */
 div.page-wrapper {
   min-height: 100%;
-  margin-bottom: 15vh;
+  margin-bottom: -15vh;
 }
 
 .page-wrapper:after {
