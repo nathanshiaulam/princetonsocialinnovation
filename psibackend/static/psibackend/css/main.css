@@ -811,8 +811,11 @@ a img {
 }
 
 .entry-content p:hover {
-  color: #5b86ab;
-  opacity: .8;
+  opacity: .7;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
 }
 
 .entry-meta {
