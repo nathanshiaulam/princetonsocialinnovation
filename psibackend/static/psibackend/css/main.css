@@ -131,10 +131,7 @@ div.background-blue, div#page-wrapper:after {
 
 /* Background color css */
 
-.background-white .info-block {
-  padding-top: 30px!important;
-  padding-bottom: 30px!important;
-}
+
 
 .background-white {
   background-color: white;
@@ -153,13 +150,19 @@ div.background-blue, div#page-wrapper:after {
 .background-gray .container 
 {
   width: 100%;
-  padding: 10px 75px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   overflow: hidden;
 }
 
 .background-white .container {
   width: 100%;
-  padding: 10px 75px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   overflow: hidden;
 }
 
@@ -700,10 +703,9 @@ a img {
 .info-block h1{
   margin-bottom: 0.625em;
   font-size: 2em;
-  margin-top: 0.2em;
+  margin-top: 0.625em;
   line-height: 1;
   text-align: center;
-  margin-right: 25px;
 }
 
 .info-block h4 {

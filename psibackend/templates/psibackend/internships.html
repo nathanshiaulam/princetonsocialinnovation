@@ -42,7 +42,7 @@
 			<a href="{% url 'internshipsdetail' internship.id%}"><h1>{{ internship.intern_role }}</h1>
 			<h3>{{ internship.employer }}</h3>
 			<p>{{ internship.description|truncatechars:300 }}</p></a>
-			<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 40px; margin-bottom: 20px">
+			<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 2%; margin-bottom: 2%;">
 			{% assign name="first" %}0{% endassign %}
 		</div>
 		{% else %}
@@ -50,7 +50,7 @@
 			<a href="{% url 'internshipsdetail' internship.id%}"><h1>{{ internship.intern_role }}</h1>
 			<h3>{{ internship.employer }}</h3>
 			<p>{{ internship.description|truncatechars:300 }}</p></a>
-			<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 40px; margin-bottom: 20px">
+			<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 2%; margin-bottom: 2%;">
 		</div>
 		{% endif %}
 		{% endif %}
