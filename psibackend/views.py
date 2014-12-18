@@ -21,23 +21,26 @@ class HomeView(generic.ListView):
 
 
 def AboutView(request):
-	presidents = Member.objects.filter(position="Co-President");
-	secretary = Member.objects.filter(position="Secretary/Treasurer");
-	marketing = Member.objects.filter(position="Marketing Director");
-	speakers = Member.objects.filter(position="TEDx/Speaker Series");
-	conference = Member.objects.filter(position="Social Innovation Conference");
-	worldofe = Member.objects.filter(position="World Of E");
-	all_members = Member.objects.all();
+	return render_to_response('psibackend/about.html')
 
-	return render(request, "psibackend/about.html", {
-		'presidents':presidents,
-		'secretary':secretary,
-		'marketing':marketing,
-		'speakers':speakers,
-		'conference':conference,
-		'worldofe':worldofe,
-		'all_members':all_members
-		});
+def TeamView(request):
+    presidents = Member.objects.filter(position="Co-President");
+    secretary = Member.objects.filter(position="Secretary/Treasurer");
+    marketing = Member.objects.filter(position="Marketing Director");
+    speakers = Member.objects.filter(position="TEDx/Speaker Series");
+    conference = Member.objects.filter(position="Social Innovation Conference");
+    worldofe = Member.objects.filter(position="World Of E");
+    all_members = Member.objects.all();
+        
+    return render(request, "psibackend/team.html", {
+        'presidents':presidents,
+        'secretary':secretary,
+        'marketing':marketing,
+        'speakers':speakers,
+        'conference':conference,
+        'worldofe':worldofe,
+        'all_members':all_members
+        });
 
 class MembersDetailView(generic.DetailView):
 	model = Member;
