@@ -30,6 +30,7 @@ def TeamView(request):
     speakers = Member.objects.filter(position="TEDx/Speaker Series");
     conference = Member.objects.filter(position="Social Innovation Conference");
     worldofe = Member.objects.filter(position="World Of E");
+    webdev = Member.objects.filter(position="Web Dev Officer")
     all_members = Member.objects.all();
         
     return render(request, "psibackend/team.html", {
@@ -39,6 +40,7 @@ def TeamView(request):
         'speakers':speakers,
         'conference':conference,
         'worldofe':worldofe,
+        'webdev':webdev,
         'all_members':all_members
         });
 
