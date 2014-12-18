@@ -33,6 +33,21 @@
   position: fixed!important;
 }
 
+/* sticky footer */
+div.page-wrapper {
+  min-height: 100%;
+  margin-bottom: 15vh;
+}
+
+.page-wrapper:after {
+  content: "";
+  display: block;
+}
+
+div.background-blue, .page-wrapper:after {
+  height: 15vh; 
+}
+
 /* Navbar css */
 
 .navbar {
