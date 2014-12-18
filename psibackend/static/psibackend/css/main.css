@@ -811,6 +811,7 @@ a img {
 }
 
 .entry-content p:hover {
+  color: #5b86ab;
   opacity: .8;
 }
 
