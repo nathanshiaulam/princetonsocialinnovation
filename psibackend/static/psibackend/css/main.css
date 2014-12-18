@@ -312,6 +312,10 @@ div.background-blue, div#page-wrapper:after {
   margin-bottom: 0;  
 }
 
+#team-top .overlay {
+  height: 50%;
+}
+
 #members .container {
   width: 85%;
 }
