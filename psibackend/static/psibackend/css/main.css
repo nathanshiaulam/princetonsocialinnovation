@@ -249,14 +249,12 @@ div.background-blue, div#page-wrapper:after {
   color: white;
   line-height: 1;
   font-size: 2em;
-  font-family: 'Comic-Sans', Helvetica, sans-serif ;
 }
 
 #about-top .container .header-info p {
   color: white;
   line-height: 1.6;
   font-size: 1.1em;
-  font-family: 'Comic-Sans', Helvetica, sans-serif ;
 }
 
 .header-info .panel {
@@ -310,6 +308,30 @@ div.background-blue, div#page-wrapper:after {
   top: 0;
   left: 0;
   margin-bottom: 0;  
+}
+
+#team-top .overlay {
+  display: table;
+}
+
+#team-top .container {
+  display: table-cell;
+  padding-left: 10%;
+  padding-right: 10%;
+  vertical-align: middle;
+  padding-top: 5%;
+}
+
+#team-top .container .header-info h2 {
+  color: white;
+  line-height: 1;
+  font-size: 2em;
+}
+
+#team-top .container .header-info p {
+  color: white;
+  line-height: 1.6;
+  font-size: 1.1em;
 }
 
 #members .container {
