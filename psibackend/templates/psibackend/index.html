@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% load staticfiles %}
-
+<!-- data-0="opacity: 1;" data-400="opacity:0; -->
+<!--<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
+<script type="text/javascript">
+	var s = skrollr.init({forceHeight: false});
+</script>-->
 {% block head %}
 <head>
 	<meta charset="UTF-8">
@@ -19,7 +23,7 @@
 <div id="index-top" class="jumbotron">
 	<div class="overlay">
 		<div class="container">
-			<div class="header-text" data-0="opacity: 1;" data-400="opacity:0; ">
+			<div class="header-text">
 				<h1 class="homepage-title">Empowering students to create <span style="color:#FF8F00;">Social Value</span></h1>
 				<h2>Princeton Social Innovation brings <!-- improve wording -->events and innovators to <b>Princeton University</b> to educate and prepare students for <b>social impact careers</b>.</h2>
 			</div>
@@ -60,8 +64,4 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
 <script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'psibackend/js/skrollr.js' %}"></script>
-<script type="text/javascript">
-	var s = skrollr.init({forceHeight: false});
-</script>
 {% endblock script %}
