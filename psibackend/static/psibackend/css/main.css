@@ -33,6 +33,17 @@
   position: fixed!important;
 }
 
+/* general link stuff */
+
+a:link {
+  color: black;
+}
+
+a:hover {
+  color: #5b86ab;
+  text-decoration: none;
+}
+
 /* sticky footer */
 div#page-wrapper {
   min-height: 100%;
@@ -800,7 +811,11 @@ a img {
 }
 
 .entry-content p:hover {
-  opacity: .8;
+  opacity: .7;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
 }
 
 .entry-meta {

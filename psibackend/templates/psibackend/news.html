@@ -53,26 +53,25 @@
 		<h1>NEWS</h1>
 		<hr style="width:85%; border-color:#6C7A89; opacity: .6; margin-top: 2%; margin-bottom: 2%;">		
 		{% for post in all_posts %}
-		<a href="{% url 'newsdetail' post.id%}">
 			<div class="container news-item">
-					<figure class="featured-image" style="background: url({{post.picture.url}});" >
-					</figure>
+					<a href="{% url 'newsdetail' post.id%}"><figure class="featured-image" style="background: url({{post.picture.url}});" ></figure></a>
 				<div class="entry-header">
-					<h2 class="glow-orange entry-title">{{post.title}}</h2>
+					<h2 class="glow-orange entry-title"><a href="{% url 'newsdetail' post.id%}">{{post.title}}</a></h2>
 				</div>
-				<div class="entry-content">
-					<p>{{post.body|truncatechars:300}}</p>
-				</div>
+        <a href="{% url 'newsdetail' post.id%}">
+          <div class="entry-content">
+            <p>{{post.body|truncatechars:300}}</p>
+          </div>
+        </a>
 				<div class="entry-meta">
 					<div class="date glow-orange">
-						{{post.date}}
+						<a href="{% url 'newsdetail' post.id%}" class="glow-orange">{{post.date}}</a>
 					</div>
 					<div class="readmore-button glow-orange">
-						Read More
+						<a href="{% url 'newsdetail' post.id%}" class="glow-orange">Read More</a>
 					</div>
 				</div>
 			</div>
-		</a>
 		{% endfor %}
 	</div>
 </div>
