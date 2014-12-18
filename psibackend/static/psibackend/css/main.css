@@ -33,6 +33,17 @@
   position: fixed!important;
 }
 
+/* general link stuff */
+
+a:link {
+  color: black;
+}
+
+a:hover {
+  color: #5b86ab;
+  text-decoration: none;
+}
+
 /* sticky footer */
 div#page-wrapper {
   min-height: 100%;
