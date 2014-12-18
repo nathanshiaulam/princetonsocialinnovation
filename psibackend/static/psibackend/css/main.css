@@ -178,42 +178,30 @@ div.background-blue, div#page-wrapper:after {
   height: 75%;
   top: 0;
   left: 0;
+  margin-bottom: 0px;
 }
+
+#index-top .container { 
+  display: table;
+  height: 100%;
+}
+
+/* Text at top of page */
 
 .header-text {
   color: white;
-  font-family: "Comic-Sans", "Helvetica", sans-serif;
-  z-index: 10;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
 }
 
-#index-top {
-  margin-bottom: 0px;
-}
-
-#index-top .container{ 
-  display: table;
-  height: 100%;
-  overflow: hidden;
-}
-
-.subtitle {
-  text-align: center;
-  padding-bottom: 20px;
-}
-
 .header-text h1 {
   line-height: 4.2rem;
   font-size: 3.6rem;
-  font-weight: 700;
 }
 
 .header-text h2 {
   line-height: 3.6rem;
-  font-size: 2.1rem;
-  font-weight: 300;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -221,6 +209,7 @@ div.background-blue, div#page-wrapper:after {
 .header-text h2 b {
   color: #FF8F00;
 }
+
 
 /* End */
 
