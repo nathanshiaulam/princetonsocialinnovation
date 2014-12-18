@@ -6359,14 +6359,17 @@ button.close {
   }
 }
 
-/*modifications*/
-.row {
+/*--------------------Modifications---------------------*/
+
+/*.row {
   width: 100%;
 }
-
-.jumbotron {
+*/
+/*.jumbotron {
   padding-top: 80px;
 }
+*/
+/* main.css */
 
 .overlay {
   background-size: cover;
@@ -6379,7 +6382,6 @@ button.close {
   height: 75%;
   top: 0;
   left: 0;
-  z-index: 2;
 }
 
 .container .header-info {
