@@ -912,15 +912,14 @@ a img {
   transform: translateY(-50%);
 }
 
-#thankyou-interns h1 {
+#thankyou h1 {
   position: relative;
   top: 30%;
   transform: translateY(50%);
 }
 
-
-#thankyou-interns .container {
-  min-height: 100vh;
+#thankyou {
+  font-size: 20px;
 }
 
 .buttons h2 {
