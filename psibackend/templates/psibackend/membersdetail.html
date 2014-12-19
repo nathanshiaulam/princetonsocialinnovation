@@ -3,17 +3,7 @@
 {% load staticfiles %}
 
 {% block head %}
-<head>
-	<meta charset="UTF-8">
-	<title> {% block title %} Princeton Social Innovation {% endblock %}</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/main.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
-	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}">
-	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
-	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
-</head>
+	{% block title %}<title>Princeton Social Innovation | Members</title>{% endblock %}
 {% endblock head %}
 {% block content %}
 	<div class="fullscreen" class="background-white">
