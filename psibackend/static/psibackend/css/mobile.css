@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@media only screen and (orientation: portrait) and (max-device-width: 480px) {
+  #index-top {
+    height: 25%;
+  }
+  
+  #about-top {
+    height: 25%;
+  }
+  
+  #team-top {
+    height: 25%;
+  }
+  
+  .overlay {
+    height: 25%;
+  }
+}
