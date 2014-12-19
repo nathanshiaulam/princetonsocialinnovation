@@ -19,7 +19,12 @@ APP_PATH = os.path.join(PROJECT_PATH, 'psibackend/templates/psibackend')
 TEMPLATE_DIRS = ([os.path.join(PROJECT_PATH, 'templates')], 
                     APP_PATH,
                     )
-
+TEMPLATE_LOADERS = (
+    'django_mobile.loader.Loader',
+)
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django_mobile.context_processors.flavour',
+)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -45,6 +50,7 @@ INSTALLED_APPS = (
     'bootstrapform',
     'templateaddons',
     'storages',
+    'django_mobile',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,6 +60,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_mobile.middleware.MobileDetectionMiddleware',
+    'django_mobile.middleware.SetFlavourMiddleware',
 )
 
 ROOT_URLCONF = 'princetonsi.urls'
