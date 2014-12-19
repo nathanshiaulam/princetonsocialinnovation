@@ -21,9 +21,12 @@ TEMPLATE_DIRS = ([os.path.join(PROJECT_PATH, 'templates')],
                     )
 TEMPLATE_LOADERS = (
     'django_mobile.loader.Loader',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
 )
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django_mobile.context_processors.flavour',
+    'django.contrib.auth.context_processors.auth',
 )
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
