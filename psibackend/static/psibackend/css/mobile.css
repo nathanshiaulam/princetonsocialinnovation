@@ -1,7 +1,27 @@
 @charset "UTF-8";
 /* CSS Document */
 
-@media only screen and (orientation: portrait) and (max-device-width: 480px) {
+/* iphone 4 portrait */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+  #index-top {
+    height: 25%;
+  }
+  
+  #about-top {
+    height: 25%;
+  }
+  
+  #team-top {
+    height: 25%;
+  }
+  
+  .overlay {
+    height: 25%;
+  }
+}
+
+/* iphone 5 portrait */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
   #index-top {
     height: 25%;
   }
