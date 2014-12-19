@@ -2,7 +2,7 @@
 {% load bootstrap %}
 
 {% block head %}
-	<title> {% block title %} Princeton Social Innovation {% endblock %}</title>
+	{% block title %}<title>Princeton Social Innovation</title>{% endblock title %}
 {% endblock head %}
 {% block content %} 
 	{% block nav %}
@@ -60,4 +60,4 @@
 	<script type="text/javascript">
 		var s = skrollr.init({forceHeight: false});
 	</script>
-	{% endblock %}
+	{% endblock script %}

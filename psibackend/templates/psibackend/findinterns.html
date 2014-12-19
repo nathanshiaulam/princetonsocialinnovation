@@ -4,7 +4,7 @@
 {% load bootstrap %}
 
 {% block head %}
-	{% block title %}<title>Princeton Social Innovation | Find Interns</title>{% endblock %}
+	{% block title %}<title>Princeton Social Innovation | Find Interns</title>{% endblock title %}
 {% endblock head %}
 {% block content %}
 <div id="find-interns" class="overlay">
@@ -31,6 +31,6 @@
 {% block script %}
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
-{% endblock %}
+{% endblock script %}
 
 
