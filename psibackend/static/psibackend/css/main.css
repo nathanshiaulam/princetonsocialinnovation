@@ -19,7 +19,7 @@
   color: white;
   font-family: 'Comic-Sans', Helvetica, sans-serif ;
 }
-
+ 
 .glow-orange:hover {
   color: #FF8F00;
   transition: all .5s ease;
