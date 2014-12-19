@@ -20,6 +20,11 @@
   font-family: 'Comic-Sans', Helvetica, sans-serif ;
 }
  
+.subtitle {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
 .glow-orange:hover {
   color: #FF8F00;
   transition: all .5s ease;
