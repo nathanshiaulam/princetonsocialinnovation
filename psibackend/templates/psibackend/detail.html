@@ -1,10 +1,19 @@
 {% load staticfiles %}
 {% load bootstrap %}
 
-{% block head %}
+<html>
+<head>
+	<meta charset="UTF-8">
 	<title> {% block title %} Princeton Social Innovation {% endblock %}</title>
-{% endblock head %}
-{% block content %} 
+	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
+	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}">
+	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
+	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
+</head>
+<body lang="en">
 	{% block nav %}
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
@@ -51,7 +60,6 @@
 		</div>
 	</div>
 	{% endblock %}
-{% endblock content %}
 	{% block script %}
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
