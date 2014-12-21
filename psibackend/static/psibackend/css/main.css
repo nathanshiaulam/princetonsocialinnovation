@@ -13,6 +13,7 @@
   height: 75%;
   top: 0;
   left: 0;
+  z-index: 10; /* for it to show in the news page */
 }
 
 .container .header-info {
@@ -492,6 +493,7 @@ div.background-blue, div#page-wrapper:after {
 
 #events-top .overlay, #internships-top .overlay {
   height: 100%;
+
 }
 
 #events-top .panel {
