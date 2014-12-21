@@ -76,6 +76,21 @@ div.background-blue, div#page-wrapper:after {
   border-radius: 0;
   z-index: 100;
   background-color: rgba(220,221,216,0.05);
+ 
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.navbar:hover {
+  background-color: rgba(0,0,0,0.5);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 
 .navbar-brand {
