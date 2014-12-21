@@ -88,15 +88,7 @@
     $('.carousel').carousel('slide', {
 		interval: 5000
 	});
-
-    $('.carousel').on('slide.bs.carousel', function () {
-      console.log("Sliding instruction Received!");
-      $('.item.active').animate();
-    });
-    $('.carousel').on('slid.bs.carousel', function () {
-      console.log("Sliding over!");
-    });
-
+	
 
 </script>
 {% endblock script %}

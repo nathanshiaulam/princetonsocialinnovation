@@ -582,6 +582,8 @@ div.background-blue, div#page-wrapper:after {
   bottom: 0px;
   margin-bottom: 10%;
   margin-right: 170px;
+
+  z-index: 9;
 }
 
 .nav-event .panel{
