@@ -510,6 +510,7 @@ div.background-blue, div#page-wrapper:after {
 
 }
 
+/* for the scrolling button thing */
 #events-top .panel {
   margin: 0;
   width: 100%;
@@ -519,13 +520,16 @@ div.background-blue, div#page-wrapper:after {
   background-color: rgba(34, 49, 63, 0.7);
 }
 
+#events-top .panel h3{
+  margin: 0;
+}
+
+/* end */
 .eventpage body {
   height: 0px!important;
 }
 
-#events-top .panel h3{
-  margin: 0;
-}
+
 
 #events-top .container, #internships-top .container {
   position: relative;
