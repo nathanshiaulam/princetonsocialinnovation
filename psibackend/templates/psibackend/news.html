@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
-	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}">
+<!-- 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}"> -->
 	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 </head>
@@ -21,7 +21,7 @@
 <div class="overlay newsoverlay">
 </div>
 <div id="news-top" class="container">
-	<div id="this-carousel-id" class="carousel">
+	<div id="this-carousel-id" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 		{% for post in first_news_post %}
 		<div class="item active">
@@ -78,14 +78,26 @@
 {% endblock content %}
 	
 {% block script %}
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'psibackend/css/flexslider/jquery.flexslider-min.js' %}"></script>
+<!-- 
+<script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'psibackend/css/flexslider/jquery.flexslider-min.js' %}"></script> -->
 <script>
-    $('.carousel').carousel({
+
+    $('.carousel').carousel('slide', {
 		interval: 5000
-	})
+	});
+
+    $('.carousel').on('slide.bs.carousel', function () {
+      console.log("Sliding instruction Received!");
+      $('.item.active').animate();
+    });
+    $('.carousel').on('slid.bs.carousel', function () {
+      console.log("Sliding over!");
+    });
+
+
 </script>
 {% endblock script %}
 
