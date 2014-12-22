@@ -12,7 +12,6 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/bootstrap-modal-carousel.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/mobile.css' %}">
 	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
@@ -30,64 +29,69 @@
 		<div class="sub-header">
 			<h3 class="move" data-0="opacity: 1;" data-400="opacity:0;">See how we <span style="color:#FF8F00">make change</span></h3>
 		</div>
+		{% block events-nav %}
+		<div class="nav-event stick">
+			{% for event in all_events %}
+				<a class="smoothScroll" href="#{{ event.identifier }}">
+					<div class="panel sub-item">
+						<p>{{ event.title }}</p>
+					</div>
+				</a>
+			{% endfor %}
+			<a class="smoothScroll" href="">
+				<div class="panel item">
+					<p class="">Events</p>
+				</div>
+			</a>
+		</div>
+		{% endblock %}
 	</div>
 </div>
-<div class="events background-white">
-	<div class="container">
-		<h1>PROGRAMS</h1>
-		<hr style="width:90%; border-color:#6C7A89; opacity: .6; margin-top: 2%; margin-bottom: 2%;">
-		<div class="events-wrapper">
-			<ul class="photo-grid">
-				{% for event in all_events %}
-				<div class="events-col col-md-4">
-					<li>
-						<a href="#{{event.title }}">
-							<div class="mini-block">
-								<figure>
-									<img class="event-button" src="{{event.picture.url}}">
-									<figcaption>
-										<p><i>{{ event.title }}</i><br />{{ event.description|truncatechars:100 }}</p>
-									</figcaption>
-								</figure>
-								<div class="event-header">
-									<h3>{{ event.title }}</h3>
-								</div>
-							</div>
-						</a>
-					</li>
+{% for event in all_events %}
+	{% if event.white %}
+	<div id="{{ event.identifier }}" class="event background-white">
+		<div class="container event-item">
+			<div class="col-md-12 event-info">
+				<div class="panel">
+					<h1>{{ event.title }}</h1>
 				</div>
-				<div id="{{ event.title }}" class="modalDialog">
-					<div>
-						<a href="#close" title="Close" class="close">X</a>
-						<h2>{{ event.title }}</h2>
-						<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 2%; margin-bottom: 2%;">
-						<p>{{ event.description }}</p>
+				<div class="panel">
+					<div class="meta-info">
+						<p class="date">{{ event.date.date }}</p>
+						<p class="time">{{ event.date.time }}</p>
 					</div>
 				</div>
-				{% endfor %}
-			</ul>
+				<h1 class="location">{{ event.location }}</h1>
+				<p>{{ event.description }}</p>
+			</div>
+		</div>	
+	</div>
+	{% else %}
+	<div id="{{ event.identifier }}" class="event background-gray">
+		<div class="container event-item">
+			<div class="col-md-12 event-info">
+				<div class="panel">
+					<h1>{{ event.title }}</h1>
+				</div>
+				<div class="panel">
+					<div class="meta-info">
+						<p class="date">{{ event.date.date }}</p>
+						<p class="time">{{ event.date.time }}</p>
+					</div>
+				</div>
+				<h1 class="location">{{ event.location }}</h1>
+				<p>{{ event.description }}</p>
 			</div>
 		</div>
 	</div>
-</div>
+	{% endif %}
+{% endfor %}
 {% endblock content%}
 
 {% block script %}
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
-<script src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'psibackend/js/demo.min.js' %}"></script>
 <script>
-	function overlay() {
-		if ($(".modal-overlay").css("visibility") == "hidden") 
-		{
-			$(".modal-overlay").css("visibility", "visible");
-		}
-		else
-		{
-			$(".modal-overlay").css("visibility", "hidden");
-		}
-	}
 	$(document).ready(function() {
 		$('.nav-event').hover(
 			function(){
@@ -107,7 +111,6 @@
 		});
 	});
 </script>
-
 {% endblock script %}
 
 
