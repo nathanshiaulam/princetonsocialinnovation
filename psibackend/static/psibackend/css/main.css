@@ -632,7 +632,6 @@ div.background-blue, div#page-wrapper:after {
 
 .event-item .panel {
   background-color: #222222;
-  height: inherit;
   margin-bottom: 10px;
 }
 
@@ -645,12 +644,6 @@ div.background-blue, div#page-wrapper:after {
   margin-bottom: 10px;
 }
 
-.event-info .location{
-  color: #222222;
-  text-align: left;
-  padding-top: 2%;
-}
-
 .event-info p {
   line-height: 2;
   font-size: 16px;
@@ -658,6 +651,11 @@ div.background-blue, div#page-wrapper:after {
 
 .meta-info {
   color: white;
+}
+
+.events .location {
+  color: #222222;
+  text-align: left;
 }
 
 .eventdate {
@@ -1172,7 +1170,8 @@ h2.entry-title {
 }
 
 .modalDialog .modalInfo {
-  width: 400px;
+  width: 75%;
+  height: 75%;
   position: relative;
   margin: 10% auto;
   padding: 15px 25px 15px 25px;
@@ -1183,6 +1182,10 @@ h2.entry-title {
   background: -o-linear-gradient(#fff, #999);
 }
 
+.modalDialog .modalInfo p {
+  line-height: 2;
+  font-size: 16px;
+}
 .event-button {
   border-radius:10px;
   background: rgba(255,255,255,0.8);

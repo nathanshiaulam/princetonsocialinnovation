@@ -72,6 +72,9 @@
 							</div>
 						</div>
 						{% endif %}
+						{% if event.location %}
+						<h2 class="location">{{ event.location }}</h2>
+						{% endif %}
 						<p>{{ event.description }}</p>
 					</div>
 				</div>
