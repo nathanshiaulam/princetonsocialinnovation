@@ -1162,16 +1162,16 @@ h2.entry-title {
   opacity:1;
   pointer-events: auto;
 }
-.datetime .date {
-  width: 50%;
-}
-.datetime .time {
-  width: 50%;
-  transform: translateX(100%);
-  text-align: right;
+
+.meta-info .date {
+  padding-left: 5px;
 }
 
-.modalDialog > div {
+.meta-info .time {
+  padding-right: 5px;
+}
+
+.modalDialog .modalInfo {
   width: 400px;
   position: relative;
   margin: 10% auto;

@@ -12,7 +12,6 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/bootstrap-modal-carousel.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/mobile.css' %}">
 	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
@@ -27,12 +26,15 @@
 				<p><i>-Sharad Vivek Sagar</i></p>
 			</div>
 		</div>
-		<div class="sub-header">
-			<h3 class="move" data-0="opacity: 1;" data-400="opacity:0;">See how we <span style="color:#FF8F00">make change</span></h3>
+		<div class="container student-button">
+			<h2 class="move">See how we <span style="color:#FF8F00">make change</span></h2>
 		</div>
+		<a href="#programs_list" class="scroll_down smoothScroll">
+			<span class="glyphicon glyphicon-hand-down navglyphicon"></span>
+		</a>
 	</div>
 </div>
-<div class="events background-white">
+<div id="programs_list" class="events background-white">
 	<div class="container">
 		<h1>PROGRAMS</h1>
 		<hr style="width:90%; border-color:#6C7A89; opacity: .6; margin-top: 2%; margin-bottom: 2%;">
@@ -57,7 +59,7 @@
 					</li>
 				</div>
 				<div id="{{ event.title }}" class="event-item modalDialog">
-					<div>
+					<div class="modalInfo">
 						<a href="#close" title="Close" class="close">X</a>
 						<div class="panel">
 							<h1>{{ event.title }}</h1>
@@ -65,8 +67,8 @@
 						{% if event.date %}
 						<div class="panel">
 							<div class="meta-info">
-								<p class="date"><b>Date</b>: {{ event.date.date }}</p>
-								<p class="time"><b>Time</b>: {{ event.date.time }}</p>
+								<p class="date">Date: {{ event.date.date }}</p>
+								<p class="time">Time: {{ event.date.time }}</p>
 							</div>
 						</div>
 						{% endif %}
@@ -85,7 +87,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
 <script src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'psibackend/js/demo.min.js' %}"></script>
 <script>
 	function overlay() {
 		if ($(".modal-overlay").css("visibility") == "hidden") 
