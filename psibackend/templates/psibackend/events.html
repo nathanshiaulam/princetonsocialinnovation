@@ -56,11 +56,20 @@
 						</a>
 					</li>
 				</div>
-				<div id="{{ event.title }}" class="modalDialog">
+				<div id="{{ event.title }}" class="event-item modalDialog">
 					<div>
 						<a href="#close" title="Close" class="close">X</a>
-						<h2>{{ event.title }}</h2>
-						<hr style="width:100%; border-color:#6C7A89; opacity: .6; margin-top: 2%; margin-bottom: 2%;">
+						<div class="panel">
+							<h1>{{ event.title }}</h1>
+						</div>
+						{% if event.date %}
+						<div class="panel">
+							<div class="meta-info">
+								<p class="date"><b>Date</b>: {{ event.date.date }}</p>
+								<p class="time"><b>Time</b>: {{ event.date.time }}</p>
+							</div>
+						</div>
+						{% endif %}
 						<p>{{ event.description }}</p>
 					</div>
 				</div>
