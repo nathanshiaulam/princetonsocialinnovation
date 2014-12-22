@@ -1185,8 +1185,8 @@ h2.entry-title {
 }
 
 .events-wrapper {
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 100px;
+  padding-right: 100px;
   padding-top: 10px;
 }
 
@@ -1229,11 +1229,12 @@ h2.entry-title {
 /* Photogrid */
 .photo-grid {
   max-width: 1106px;
+  padding-left: 0px;
 }
  
 .photo-grid li {
   display: inline-block;
-  width: 250px;
+  width: 100%;
 }
  
 .photo-grid img {
@@ -1274,6 +1275,7 @@ h2.entry-title {
 .mini-block {
   width: 250px;
   height: 250px;
+  margin: auto;
 }
 
 .photo-grid li:hover figcaption {
