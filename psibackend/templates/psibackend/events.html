@@ -43,19 +43,19 @@
 				{% for event in all_events %}
 				<div class="events-col col-md-4">
 					<li>
-						<a href="#{{event.title }}">
-							<div class="mini-block">
+						<div class="mini-block">
+							<a href="#{{event.title }}">
 								<figure>
 									<img class="event-button" src="{{event.picture.url}}">
 									<figcaption>
 										<p><i>{{ event.title }}</i><br />{{ event.description|truncatechars:100 }}</p>
 									</figcaption>
 								</figure>
-								<div class="event-header">
-									<h3>{{ event.title }}</h3>
-								</div>
+							</a>
+							<div class="event-header panel">
+								<h3>{{ event.title }}</h3>
 							</div>
-						</a>
+						</div>
 					</li>
 				</div>
 				<div id="{{ event.title }}" class="event-item modalDialog">
