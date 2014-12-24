@@ -9,6 +9,7 @@ class Post(models.Model):
     title = models.CharField(max_length=150);
     body = models.TextField();
     picture = models.ImageField(upload_to='news/', blank=True, null=True);
+    croppedPicture = models.ImageField(upload_to='news/', blank=True, null=True);
     date = models.DateField('date posted');
 
     def thumb(self):

@@ -55,7 +55,7 @@
 		{% for post in all_posts %}
 			<div class="container news-item">
 					<a href="{% url 'newsdetail' post.id%}">
-						<center> <img src="{{post.picture.url}}" class="featured-image" width="800"> </center>
+						<center> <img src="{{post.croppedPicture.url}}" class="featured-image" width="800"> </center>
 					</a>
 				<div class="entry-header">
 					<h2 class="glow-orange entry-title"><a href="{% url 'newsdetail' post.id%}">{{post.title}}</a></h2>
