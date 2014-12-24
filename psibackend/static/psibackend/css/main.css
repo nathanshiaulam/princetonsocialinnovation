@@ -769,13 +769,10 @@ a img {
 }
 
 .featured-image {
+  max-width: 100%;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
-  max-width: 80%;
-  height: 20%;
-  overflow: hidden;
-  background-position: center center!important;
-  background-size: cover!important;
   transition: all .5s ease;
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
