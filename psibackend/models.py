@@ -26,8 +26,6 @@ class Event(models.Model):
     location = models.CharField(max_length=150);
     picture = models.ImageField(upload_to='events/', blank=True, null=True);
     date = models.DateTimeField('time of event');
-    white = models.BooleanField(default=False);
-    identifier = models.CharField(default="", max_length=100);
     description = models.TextField();
 
     def thumb(self):

@@ -7,7 +7,7 @@ class PostAdmin(admin.ModelAdmin):
 	search_fields = ['question'];
 
 class EventAdmin(admin.ModelAdmin):
-	list_display = ('title', 'date', 'white');
+	list_display = ('title', 'date');
 	list_filter = ['date'];
 	search_fields = ['question'];
 
