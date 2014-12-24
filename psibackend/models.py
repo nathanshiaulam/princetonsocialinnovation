@@ -23,9 +23,9 @@ class Post(models.Model):
 
 class Event(models.Model):
     title = models.CharField(max_length=150);
-    location = models.CharField(max_length=150);
+    location = models.CharField(max_length=150, blank=True);
     picture = models.ImageField(upload_to='events/', blank=True, null=True);
-    date = models.DateTimeField('time of event');
+    date = models.DateTimeField('time of event', blank=True);
     description = models.TextField();
 
     def thumb(self):
