@@ -1202,7 +1202,22 @@ h2.entry-title {
 
 .event-header.panel{
   border-radius: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  z-index: 100;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease; 
+}
+
+.event-header.panel:hover {
+  background-color: #FF8F00;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease; 
 }
 
 .event-header.panel h3 {
@@ -1255,6 +1270,8 @@ h2.entry-title {
 .photo-grid {
   max-width: 1106px;
   padding-left: 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
  
 .photo-grid li {
@@ -1305,9 +1322,6 @@ h2.entry-title {
   margin: auto;
 }
 
-.photo-grid li:hover figcaption {
-  opacity: 1;
-}
 
 .photo-grid img {
   display: block;
@@ -1318,7 +1332,13 @@ h2.entry-title {
   max-width: 100%;
 }
  
-.photo-grid li:hover img {
+.photo-grid img:hover {
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  transform: scale(1.4);
+}
+
+.photo-grid .panel:hover + img {
   -webkit-transform: scale(1.4);
   -moz-transform: scale(1.4);
   transform: scale(1.4);
@@ -1338,29 +1358,4 @@ h2.entry-title {
   vertical-align: middle;
 }
  
-.photo-grid li:hover figcaption p {
-  -moz-transform: translateY(40px);
-  -webkit-transform: translateY(40px);
-  transform: translateY(40px);
-}
-
-.photo-grid figcaption {
-  background: rgba(0,0,0,0.8);
-  color: white;
-  display: table;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-radius: 10px;
-  -webkit-transition: all 300ms;
-  -moz-transition: all 300ms;
-  transition: all 300ms;
-  -webkit-transition-delay: 100ms;
-  -moz-transition-delay: 100ms;
-  transition-delay: 100ms;
-  z-index: 100;
-}
 /* End */

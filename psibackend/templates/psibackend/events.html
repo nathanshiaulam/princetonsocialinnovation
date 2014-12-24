@@ -46,15 +46,12 @@
 						<div class="mini-block">
 							<a href="#{{event.title }}">
 								<figure>
+									<div class="event-header panel">
+										<h3>{{ event.title }}</h3>
+									</div>
 									<img class="event-button" src="{{event.picture.url}}">
-									<figcaption>
-										<p><i>{{ event.title }}</i><br />{{ event.description|truncatechars:100 }}</p>
-									</figcaption>
 								</figure>
 							</a>
-							<div class="event-header panel">
-								<h3>{{ event.title }}</h3>
-							</div>
 						</div>
 					</li>
 				</div>
