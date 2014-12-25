@@ -22,15 +22,18 @@
 				<div class="memberdetail row">
 					<div class="col-md-4">
 						<div class="member-img">
-							<img src="{{ member.picture.url }}">
+							<center>
+								<img src="{{ member.picture.url }}">
+							</center>
 						</div>
 					</div>
 					<div class="col-md-8">
 						<div class="member-head">
-							<h1>{{ member.name }}<span style="text-align: right; float: right;">{{ member.position }}</span></h1>
+							<h1>{{ member.name }}</h1>
+							<h2>{{ member.position }}</h2>
 						</div>
 						<div class="member-body">
-							<h3>Class of {{ member.year }}</h3>
+							<h2>Class of {{ member.year }}</h2>
 							<p>{{ member.bio }}</p>
 						</div>
 					</div>

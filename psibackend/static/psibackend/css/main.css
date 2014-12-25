@@ -443,7 +443,7 @@ div.background-blue, div#page-wrapper:after {
 }
 
 .memberdetail img{
-  width:100%;
+  max-width:100%;
   height: auto;
 }
 
@@ -451,30 +451,56 @@ div.background-blue, div#page-wrapper:after {
   margin-top: 0px;
 }
 
-.memberdetail .member-head h3 {
-  text-align: right;
-}
-.memberdetail h3 {
+.memberdetail h1, h2 {
   margin: 0;
-  padding-bottom: 5px;
+  padding: 0;
+}
+
+.memberdetail h2 {
+  font-size: 24px;
 }
 
 .memberdetail p {
   line-height: 1.5;
   font-size: 16px;
-  padding-top: 3%;
+  padding-top: 1%;
+}
+
+
+@media only screen and (max-width:991px) {
+  .memberdetail img {
+    max-width:50%;
+  }
+
+  .memberdetail {
+    margin-top: 16%;
+  }
+
+  .member-head, .member-body {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width:640px) {
+  .memberdetail {
+    margin-top: 20%;
+  }
+}
+
+.member-head h2 {
+  padding-top: 1%;
 }
 
 .member-body {
-  padding-top: 5%;
+  padding-top: 1%;
 }
-.member-body h3 {
+.member-body h2 {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
 .member-body p {
-  padding-top: 3%;
+  padding-top: 2%;
 }
 
 .featured-image-detail {
