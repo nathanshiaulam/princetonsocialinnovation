@@ -26,78 +26,72 @@
 				<p><i>-Sharad Vivek Sagar</i></p>
 			</div>
 		</div>
-		<div class="container student-button">
-			<h2 class="move">See how we <span style="color:#FF8F00">make change</span></h2>
+		<div class="sub-header">
+			<h3 class="move" data-0="opacity: 1;" data-400="opacity:0;">See how we <span style="color:#FF8F00">make change</span></h3>
 		</div>
-		<a href="#programs_list" class="scroll_down smoothScroll">
-			<span class="glyphicon glyphicon-hand-down navglyphicon"></span>
-		</a>
+		{% block events-nav %}
+		<div class="nav-event stick">
+			{% for event in all_events %}
+				<a class="smoothScroll" href="#{{ event.identifier }}">
+					<div class="panel sub-item">
+						<p>{{ event.title }}</p>
+					</div>
+				</a>
+			{% endfor %}
+			<a class="smoothScroll" href="">
+				<div class="panel item">
+					<p class="">Events</p>
+				</div>
+			</a>
+		</div>
+		{% endblock %}
 	</div>
 </div>
-<div id="programs_list" class="events background-white">
-	<div class="container">
-		<h1>PROGRAMS</h1>
-		<hr style="width:90%; border-color:#6C7A89; opacity: .6; margin-top: 2%; margin-bottom: 2%;">
-		<div class="events-wrapper">
-			<ul class="photo-grid">
-				{% for event in all_events %}
-				<div class="events-col col-md-4">
-					<li>
-						<div class="mini-block">
-							<a href="#{{event.title }}">
-								<figure>
-									<div class="event-header panel">
-										<h3>{{ event.title }}</h3>
-									</div>
-									<img class="event-button" src="{{event.picture.url}}">
-								</figure>
-							</a>
-						</div>
-					</li>
+{% for event in all_events %}
+	{% if event.white %}
+	<div id="{{ event.identifier }}" class="event background-white">
+		<div class="container event-item">
+			<div class="col-md-12 event-info">
+				<div class="panel">
+					<h1>{{ event.title }}</h1>
 				</div>
-				<div id="{{ event.title }}" class="event-item modalDialog">
-					<div class="modalInfo">
-						<a href="#close" title="Close" class="close">X</a>
-						<div class="panel">
-							<h1>{{ event.title }}</h1>
-						</div>
-						{% if event.date %}
-						<div class="panel">
-							<div class="meta-info">
-								<p class="date">Date: {{ event.date.date }}</p>
-								<p class="time">Time: {{ event.date.time }}</p>
-							</div>
-						</div>
-						{% endif %}
-						{% if event.location %}
-						<h2 class="location">{{ event.location }}</h2>
-						{% endif %}
-						<p>{{ event.description }}</p>
+				<div class="panel">
+					<div class="meta-info">
+						<p class="date">{{ event.date.date }}</p>
+						<p class="time">{{ event.date.time }}</p>
 					</div>
 				</div>
-				{% endfor %}
-			</ul>
+				<h1 class="location">{{ event.location }}</h1>
+				<p>{{ event.description }}</p>
+			</div>
+		</div>	
+	</div>
+	{% else %}
+	<div id="{{ event.identifier }}" class="event background-gray">
+		<div class="container event-item">
+			<div class="col-md-12 event-info">
+				<div class="panel">
+					<h1>{{ event.title }}</h1>
+				</div>
+				<div class="panel">
+					<div class="meta-info">
+						<p class="date">{{ event.date.date }}</p>
+						<p class="time">{{ event.date.time }}</p>
+					</div>
+				</div>
+				<h1 class="location">{{ event.location }}</h1>
+				<p>{{ event.description }}</p>
 			</div>
 		</div>
 	</div>
-</div>
+	{% endif %}
+{% endfor %}
 {% endblock content%}
 
 {% block script %}
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
-<script src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
 <script>
-	function overlay() {
-		if ($(".modal-overlay").css("visibility") == "hidden") 
-		{
-			$(".modal-overlay").css("visibility", "visible");
-		}
-		else
-		{
-			$(".modal-overlay").css("visibility", "hidden");
-		}
-	}
 	$(document).ready(function() {
 		$('.nav-event').hover(
 			function(){
@@ -117,7 +111,10 @@
 		});
 	});
 </script>
-
 {% endblock script %}
-
+.photo-grid .panel:hover + img {
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  transform: scale(1.4);
+}
 
