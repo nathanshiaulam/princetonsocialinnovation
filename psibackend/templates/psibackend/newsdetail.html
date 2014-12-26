@@ -24,7 +24,9 @@
 		<h1>{{ post.title }}</h1>
 		<hr style="width:85%; border-color:#6C7A89; opacity: .6; margin-top: 2%; margin-bottom: 2%;">
 		<div class="container news-item">
-			<figure class="featured-image-detail" style="background:url({{ post.picture.url }});"></figure>
+			<center>
+				<img class="featured-image-detail" src="{{ post.picture.url }}" width="800">
+			</center>
 			<div class="entry-content-detail detail-post-info">
 				<span style="white-space:pre-wrap;"><p>{{ post.body }}</p></span>
 			</div>

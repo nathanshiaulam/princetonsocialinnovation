@@ -54,7 +54,9 @@
 		<hr style="width:85%; border-color:#6C7A89; opacity: .6; margin-top: 2%; margin-bottom: 2%;">		
 		{% for post in all_posts %}
 			<div class="container news-item">
-					<a href="{% url 'newsdetail' post.id%}"><figure class="featured-image" style="background: url({{post.picture.url}});" ></figure></a>
+					<a href="{% url 'newsdetail' post.id%}">
+						<center> <img src="{{post.croppedPicture.url}}" class="featured-image" width="800"> </center>
+					</a>
 				<div class="entry-header">
 					<h2 class="glow-orange entry-title"><a href="{% url 'newsdetail' post.id%}">{{post.title}}</a></h2>
 				</div>
