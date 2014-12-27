@@ -1168,6 +1168,13 @@ h2.entry-title {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
+#team-top .panel {
+  padding-top: 20px;
+}
+
+#about-top .panel {
+  padding-top: 20px;
+}
 /* Modal */
 
 .modalDialog {
