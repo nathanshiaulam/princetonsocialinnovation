@@ -1226,8 +1226,6 @@ h2.entry-title {
 .event-button {
   border-radius:10px;
   background: rgba(255,255,255,0.8);
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
 }
 
 .event-header {
