@@ -12,11 +12,12 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/Font-Awesome-master/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" >
 	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/flexslider/flexslider.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/mobile.css' %}">
+  	<link rel="stylesheet" type="text/css" href="{% static 'psibackend/css/mobile.css' %}">
 	<link rel="shortcut icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 	<link rel="icon" href="{% static 'psibackend/css/images/favicon.ico' %}" type="image/x-icon">
 </head>
 {% endblock head %}
+
 {% block content %} 
 <div id="events-top" class="jumbotron">
 	<div class="overlay">
@@ -87,37 +88,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="{% static 'psibackend/js/smoothscroll.js' %}"></script>
 <script src="{% static 'psibackend/js/bootstrap.min.js' %}"></script>
-<script>
-	function overlay() {
-		if ($(".modal-overlay").css("visibility") == "hidden") 
-		{
-			$(".modal-overlay").css("visibility", "visible");
-		}
-		else
-		{
-			$(".modal-overlay").css("visibility", "hidden");
-		}
-	}
-	$(document).ready(function() {
-		$('.nav-event').hover(
-			function(){
-   		 		$(".sub-item").slideDown(200);
-   		 		$(".move").fadeTo( "fast", 0);
-   		 	},
-			function(){
-				$(".sub-item").slideUp(200);
-   		 		$(".move").fadeTo( "slow", 1);
-		});
-		$('.nav-event').hover(
-			function(){
-				$(".panel.item").css("background-color", "#6C7A89");
-			},
-			function(){
-				$(".panel.item").css("background-color", "rgba(34, 49, 63, 0.7)");
-		});
-	});
-</script>
-
 {% endblock script %}
 
 

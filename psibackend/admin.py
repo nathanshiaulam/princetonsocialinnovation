@@ -4,12 +4,12 @@ from psibackend.models import *
 class PostAdmin(admin.ModelAdmin):
 	list_display = ('title', 'date');
 	list_filter = ['date'];
-	search_fields = ['question'];
+	search_fields = ['title'];
 
 class EventAdmin(admin.ModelAdmin):
 	list_display = ('title', 'date');
 	list_filter = ['date'];
-	search_fields = ['question'];
+	search_fields = ['title'];
 
 class MemberAdmin(admin.ModelAdmin):
 	list_display = ('name', 'thumb', 'position', 'year', 'current');
